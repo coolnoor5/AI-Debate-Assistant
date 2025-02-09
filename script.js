@@ -12,24 +12,56 @@ function toggleSection(sectionId) {
     section.style.display = section.style.display === "none" ? "block" : "none";
 }
 
-// Massive Debate Data
+// Debate Data
 const debates = {
     "school_uniforms": {
-        pros: ["Creates a sense of equality", "Reduces peer pressure", "Increases school spirit"],
-        cons: ["Limits self-expression", "Can be expensive", "Does not stop bullying"],
-        arguments: ["Uniforms improve focus on studies"],
-        counterArguments: ["Studies show no improvement in grades"]
+        pros: [
+            "Creates equality among students",
+            "Reduces peer pressure",
+            "Encourages discipline",
+            "Saves time in the morning",
+            "Prevents bullying based on clothing",
+        ],
+        cons: [
+            "Limits self-expression",
+            "Can be expensive for families",
+            "Uncomfortable for some students",
+            "Does not necessarily improve behavior",
+        ],
+        arguments: [
+            "Uniforms improve student focus and reduce distractions.",
+            "Self-expression through clothing is important for student identity.",
+        ],
+        counterArguments: [
+            "Uniforms do not affect academic performance.",
+            "Allowing dress choice teaches responsibility."
+        ]
     },
     "social_media": {
-        pros: ["Helps connect people", "Provides educational content", "Can raise awareness"],
-        cons: ["Leads to cyberbullying", "Reduces face-to-face interaction", "Spreads misinformation"],
-        arguments: ["Social media enhances learning"],
-        counterArguments: ["Students are often distracted"]
+        pros: [
+            "Encourages global communication",
+            "Allows for educational content sharing",
+            "Can help businesses grow",
+            "Raises awareness of important issues",
+        ],
+        cons: [
+            "Leads to cyberbullying",
+            "Can be addictive",
+            "Exposes children to inappropriate content",
+        ],
+        arguments: [
+            "Social media enhances learning and communication.",
+            "Social media can be dangerous for young users."
+        ],
+        counterArguments: [
+            "Proper education on digital safety is a better solution.",
+            "Better regulations can help make social media safer."
+        ]
     }
 };
 
-// Generate Debate Function
-function generateDebate() {
+// Generate Debate
+document.getElementById("generateDebate").addEventListener("click", function () {
     let topic = document.getElementById("debateTopic").value;
     let output = document.getElementById("debateOutput");
 
@@ -46,4 +78,4 @@ function generateDebate() {
     } else {
         output.innerHTML = "❌ No debate found. Try another topic.";
     }
-}
+});
