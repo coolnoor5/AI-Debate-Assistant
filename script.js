@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         output.innerHTML = `<p><strong>You:</strong> ${topic}</p><p>Generating debate...</p>`;
 
         try {
-            const response = await fetch("https://sulfuric-bloom-earwig.glitch.me/api/debate", {
+            const response = await fetch("https://nickel-exciting-deposit.glitch.me/api/debate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ topic }),
