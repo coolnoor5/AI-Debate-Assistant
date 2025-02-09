@@ -1,41 +1,50 @@
-/* 🌟 General Page Styling */
+/* General Page Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #ffe6e6; /* Soft Pink Background */
+    background: linear-gradient(to bottom, #fde2e2, #d0bdf4, #bde0fe); /* Pastel gradient */
     color: #333;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-/* 🎨 Container */
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* 🎙️ Title */
+/* Header */
 h1 {
-    font-size: 2.2em;
-    color: #e6005c; /* Bright Pink */
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #d63384; /* Dark Pink */
     text-shadow: 2px 2px 8px rgba(230, 0, 92, 0.3);
 }
 
-/* 🏆 Section Titles */
-h2 {
-    font-size: 1.8em;
-    background: #ff99c8; /* Soft Pink */
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
+/* Sections */
+.section {
+    background: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 💡 Debate Topic Dropdown */
+/* Buttons */
+button {
+    background-color: #e6005c; /* Bright Pink */
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #b82b6c;
+}
+
+/* Select Dropdown */
 select {
     font-size: 1em;
     padding: 10px;
@@ -45,61 +54,63 @@ select {
     cursor: pointer;
 }
 
-/* 🎯 Buttons */
-button {
-    font-size: 1em;
-    padding: 10px 20px;
-    background: #e6005c; /* Bright Pink */
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #cc0052; /* Darker Pink */
-}
-
-/* 💬 Debate Response Bubble */
-.bubble {
-    background: #f8e6e6;
-    padding: 15px;
-    border-radius: 15px;
-    margin-top: 15px;
-    font-size: 1.2em;
-}
-
-/* 🏆 XP Section */
-#xp-count {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: #e6005c;
-}
-
-/* 🔽 Expandable Sections */
+/* Expandable Sections */
 .expandable {
-    background: #ff6699;
+    background-color: #ff6699;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
     cursor: pointer;
-    margin: 10px 0;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    margin: 10px auto;
 }
 
 .expandable:hover {
-    background: #cc0052;
+    background-color: #cc0052;
 }
 
 /* Expandable Content */
-.expandable-content {
+.hidden-content {
     display: none;
-    padding: 10px;
-    background: #fff0f5;
-    border-radius: 8px;
+    background: #fff0f5; /* Light pink */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    width: 80%;
+    max-width: 900px;
+    margin: 10px auto;
 }
 
-/* 📝 Lists */
+/* XP System */
+.xp-box {
+    background-color: #ffeeba;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Debate Output Styling */
+#debateOutput {
+    background: #f8f9fa; /* Light Gray */
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Lists */
 ul {
     text-align: left;
     list-style-type: none;
@@ -109,27 +120,4 @@ ul {
 li {
     padding: 8px;
     font-size: 1.1em;
-}
-
-/* 🏆 XP & Rewards */
-#xp-count {
-    color: #ff4500;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-/* 📚 Teachers' Corner */
-.teachers-section {
-    background: #ffcccb;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px 0;
-}
-
-/* 🇦🇪 UAE Debate Section */
-.uae-section {
-    background: #d4f1f9;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 1.2em;
 }
