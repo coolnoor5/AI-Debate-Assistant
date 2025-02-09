@@ -3,10 +3,11 @@ body {
     text-align: center;
     background-color: #ffe4e1; /* Soft pastel pink */
     color: #333;
+    padding: 20px;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
     background: white;
@@ -22,9 +23,10 @@ h1 {
 
 h2 {
     background-color: #ffcccb;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 select, button {
