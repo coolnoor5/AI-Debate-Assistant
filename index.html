@@ -7,62 +7,90 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🎙️ AI Debate Assistant</h1>
 
-        <!-- 🎯 Debate Selection -->
+    <h1>🎤 AI Debate Assistant</h1>
+
+    <!-- Select a Debate Topic -->
+    <div class="section">
         <h2>💡 Select a Debate Topic:</h2>
-        <select id="debate-topic">
-            <option>Should school uniforms be mandatory?</option>
-            <option>Should social media have age restrictions?</option>
+        <select id="debateTopic">
+            <option value="school_uniforms">Should school uniforms be mandatory?</option>
+            <option value="social_media">Should social media have age restrictions?</option>
+            <option value="ai_jobs">Is AI taking over human jobs?</option>
+            <option value="gun_control">Should stricter gun control laws be implemented?</option>
+            <option value="climate_change">Is climate change the biggest global threat?</option>
         </select>
-        <button id="generate-debate">Generate Full Debate</button>
+        <button onclick="generateDebate()">Generate Full Debate</button>
+        <div id="debateOutput" class="section"></div>
+    </div>
 
-        <!-- 📌 Debate Output -->
-        <div id="debate-output" class="bubble"></div>
+    <!-- XP System -->
+    <div class="section xp-box">
+        🏆 XP & Rewards <br>
+        Your XP: <span id="xpCounter">0</span>
+    </div>
 
-        <!-- 🏆 XP & Rewards -->
-        <h2>🏆 XP & Rewards</h2>
-        <p>Your XP: <span id="xp-count">0</span></p>
+    <!-- Debate Tips -->
+    <div class="section expandable" onclick="toggleSection('debateTips')">
+        📢 Debate Tips (Click to Expand) ▼
+    </div>
+    <div id="debateTips" class="hidden-content">
+        <ul>
+            <li>🔹 Structure your speech with an introduction, main points, and a conclusion.</li>
+            <li>🔹 Always have **evidence** to support your argument.</li>
+            <li>🔹 Use rhetorical questions to engage your audience.</li>
+            <li>🔹 Counterarguments make your case stronger.</li>
+            <li>🔹 Control your voice—speak clearly and confidently.</li>
+            <li>🔹 Look at your opponent when countering them.</li>
+            <li>🔹 Never repeat the same point—make new arguments.</li>
+            <li>🔹 Respect your opponent’s arguments but prove why yours are stronger.</li>
+            <li>🔹 Start with a powerful statement or statistic.</li>
+            <li>🔹 Use **real-world examples** to make your case relatable.</li>
+        </ul>
+    </div>
 
-        <!-- 🔽 Debate Tips -->
-        <h2 class="expandable">📢 Debate Tips (Click to Expand)</h2>
-        <div class="expandable-content">
-            <ul>
-                <li>🔹 How to start a strong opening statement? 🏆</li>
-                <li>🔹 How to counter strong arguments effectively?</li>
-                <li>🔹 How to handle nerves during a debate?</li>
-                <li>🔹 How to use rhetorical questions to win debates?</li>
-            </ul>
-        </div>
+    <!-- Fun Debate Facts -->
+    <div class="section expandable" onclick="toggleSection('funFacts')">
+        🧠 Fun Debate Facts ▼
+    </div>
+    <div id="funFacts" class="hidden-content">
+        <ul>
+            <li>🗣️ The world's longest debate lasted **58 hours**!</li>
+            <li>📜 Ancient Greece was the birthplace of formal debating.</li>
+            <li>🎤 The first televised debate was in **1960**, between JFK and Nixon.</li>
+            <li>🧠 Debating improves **critical thinking skills**.</li>
+            <li>🏆 The UAE hosts **the annual National Debate Championship**.</li>
+        </ul>
+    </div>
 
-        <!-- 🔽 Fun Debate Facts -->
-        <h2 class="expandable">🧠 Fun Debate Facts</h2>
-        <div class="expandable-content">
-            <ul>
-                <li>🎤 The world’s longest debate lasted **58 hours**!</li>
-                <li>🧠 The ancient Greeks were among the first to formalize debate.</li>
-                <li>🎭 Some schools require students to argue **both sides** of an issue.</li>
-            </ul>
-        </div>
+    <!-- Teachers' Section -->
+    <div class="section expandable" onclick="toggleSection('teachersSection')">
+        👩‍🏫 Teachers' Corner ▼
+    </div>
+    <div id="teachersSection" class="hidden-content">
+        <p>🌟 **Study Plan for Teaching Debating:**</p>
+        <ul>
+            <li>📌 **Week 1:** Introduction to Debating</li>
+            <li>📌 **Week 2:** How to Build Strong Arguments</li>
+            <li>📌 **Week 3:** Countering Opponents & Logical Fallacies</li>
+            <li>📌 **Week 4:** Public Speaking & Persuasion</li>
+            <li>📌 **Week 5:** Competitive Debating Techniques</li>
+            <li>📌 **Week 6:** Running a Full Classroom Debate</li>
+        </ul>
+    </div>
 
-        <!-- 🇦🇪 Debate & The UAE -->
-        <h2 class="expandable">🇦🇪 Debate & The UAE</h2>
-        <div class="expandable-content">
-            <p>The UAE encourages debating through national competitions, Model United Nations, and academic events.</p>
-        </div>
-
-        <!-- 📚 Teachers' Guide -->
-        <h2 class="expandable">📖 Teachers' Corner</h2>
-        <div class="expandable-content">
-            <p>🌟 **Study Plan for Teaching Debating:**</p>
-            <ul>
-                <li>📌 Week 1: Basics of debating</li>
-                <li>📌 Week 2: Structuring an argument</li>
-                <li>📌 Week 3: Handling counterarguments</li>
-                <li>📌 Week 4: Advanced debating techniques</li>
-            </ul>
-        </div>
+    <!-- Debate & UAE -->
+    <div class="section expandable" onclick="toggleSection('uaeDebate')">
+        🇦🇪 Debate & The UAE ▼
+    </div>
+    <div id="uaeDebate" class="hidden-content">
+        <p>The UAE has a strong debating culture, with initiatives like:</p>
+        <ul>
+            <li>🏆 **The National Debate Championship** - held annually for students across the country.</li>
+            <li>🌍 **Model United Nations (MUN)** - where students simulate global diplomacy.</li>
+            <li>📖 **Debating in Schools** - The UAE Ministry of Education promotes debate programs in high schools.</li>
+            <li>🎤 **Public Speaking Competitions** - Various institutions hold public speaking events to enhance student engagement.</li>
+        </ul>
     </div>
 
     <script src="script.js"></script>
