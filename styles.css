@@ -1,79 +1,56 @@
-/* General Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #fffaf1;
+    font-family: Arial, sans-serif;
+    background-color: #fde2e4;
     color: #333;
+    text-align: center;
     padding: 20px;
 }
 
-/* Header */
+h1 {
+    color: #ff6392;
+}
+
+h2 {
+    color: #ff9671;
+}
+
 header {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
-    padding: 20px;
+    background-color: #ffdeeb;
+    padding: 15px;
     border-radius: 10px;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-/* Section Styling */
 section {
-    padding: 30px;
-    margin: 20px auto;
-    width: 90%;
+    background-color: #fff;
+    padding: 15px;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-/* Different Background Colors for Each Section */
-#chatbot { background-color: #ffebf3; } /* Pastel Pink */
-#debate-tips { background-color: #e6f7ff; } /* Pastel Blue */
-#sample-debates { background-color: #efe6ff; } /* Pastel Purple */
-#debate-essays { background-color: #fff3e6; } /* Beige */
-#fun-facts { background-color: #e6ffee; } /* Light Green */
-#xp-rewards { background-color: #fffde7; } /* Light Yellow */
-
-/* Headings */
-h1, h2 {
-    color: #ff4081;
-}
-
-/* List Items */
-ul {
-    list-style-type: none;
-    padding: 10px;
-}
-
-ul li {
-    background: white;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 10px;
-    font-size: 18px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Buttons */
 button {
-    background-color: #ff4081;
+    background-color: #ff6392;
     color: white;
     padding: 10px;
     border: none;
-    border-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #e91e63;
+    background-color: #ff477e;
 }
 
-/* Footer */
-footer {
-    margin-top: 20px;
-    background-color: #ff9a9e;
-    color: white;
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
     padding: 10px;
-    border-radius: 10px;
-    font-size: 14px;
+    cursor: pointer;
+}
+
+li:hover {
+    color: #ff477e;
 }
