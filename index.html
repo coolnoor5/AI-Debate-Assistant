@@ -3,41 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Debate Assistant</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AI Debate Assistant (Pre-Made Scripts)</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>🎤 AI Debate Assistant</h1>
-        <p>Welcome to the ultimate debate training hub! Earn XP, learn debate skills, and get AI-generated arguments.</p>
+        <h1>🎙️ AI Debate Assistant</h1>
+        <p>Welcome! Select a debate topic and get full pre-made arguments.</p>
 
-        <div class="xp-bar">
-            <p>🎖 XP: <span id="xp">0</span></p>
-            <progress id="xp-progress" value="0" max="100"></progress>
-        </div>
+        <h2>💡 Select a Debate Topic:</h2>
+        <select id="debate-topics">
+            <option value="">-- Choose a Topic --</option>
+            <option value="school-uniforms">Should school uniforms be mandatory?</option>
+            <option value="social-media">Should social media have age restrictions?</option>
+            <option value="ai-jobs">Is AI taking over human jobs?</option>
+            <option value="homework-ban">Should homework be banned?</option>
+            <option value="climate-change">Is climate change the biggest threat to humanity?</option>
+        </select>
 
-        <textarea id="debateInput" placeholder="Enter a debate topic..."></textarea>
-        <button onclick="getDebateResponse()">Get AI Debate Arguments</button>
-        
-        <div id="debateResponse"></div>
+        <button id="generate-debate">Generate Full Debate</button>
 
-        <h2>🔥 Sample Debate Topics</h2>
-        <ul id="debateTopics">
-            <li>📌 Should social media be banned for minors?</li>
-            <li>📌 Is AI a threat to jobs?</li>
-            <li>📌 Should schools remove homework?</li>
-        </ul>
+        <div id="debate-response"></div>
 
-        <h2>📝 Debate Strategies</h2>
-        <ul>
-            <li>✔️ Always back up arguments with evidence.</li>
-            <li>✔️ Anticipate counterarguments and refute them.</li>
-            <li>✔️ Use rhetorical devices like repetition and anecdotes.</li>
-        </ul>
+        <section>
+            <h2>🏆 XP & Rewards</h2>
+            <p>Your XP: <span id="xp-count">0</span></p>
+        </section>
 
-        <p>💡 Fun Fact: The longest debate in history lasted **36 hours**!</p>
+        <section>
+            <h2>📢 Debate Tips (Click to Expand)</h2>
+            <ul id="debate-tips">
+                <li onclick="toggleTip(1)">🔹 How to start a strong opening statement? <span class="arrow">▼</span></li>
+                <p id="tip1" class="hidden">Start with a powerful question or a shocking fact to grab attention!</p>
 
-        <script src="script.js"></script>
+                <li onclick="toggleTip(2)">🔹 What to do if your opponent makes a strong argument? <span class="arrow">▼</span></li>
+                <p id="tip2" class="hidden">Acknowledge their point, but counter it with evidence!</p>
+
+                <li onclick="toggleTip(3)">🔹 How to speak with confidence? <span class="arrow">▼</span></li>
+                <p id="tip3" class="hidden">Maintain eye contact, use hand gestures, and project your voice.</p>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🧠 Fun Debate Facts</h2>
+            <div class="bubble">🗣️ The world’s longest debate lasted **58 hours**!</div>
+            <div class="bubble">📚 Many famous leaders like **Barack Obama** and **Nelson Mandela** were top debaters.</div>
+            <div class="bubble">🏛️ Ancient Greece was the first place where formal debates were held.</div>
+        </section>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
