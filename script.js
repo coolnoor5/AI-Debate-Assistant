@@ -1,48 +1,96 @@
-let xp = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    // 🏆 XP Counter
+    let xp = 0;
+    document.getElementById("xp-count").innerText = xp;
 
-document.getElementById("generate-debate").addEventListener("click", function () {
-    const topic = document.getElementById("debate-topics").value;
-    const debateResponse = document.getElementById("debate-response");
-    const xpCounter = document.getElementById("xp-count");
+    // 🔽 Expand Click-to-Expand Sections
+    document.querySelectorAll(".expandable").forEach((btn) => {
+        btn.addEventListener("click", function () {
+            let content = this.nextElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        });
+    });
 
-    if (!topic) {
-        debateResponse.innerHTML = "<p style='color: red;'>⚠️ Please select a debate topic.</p>";
-        return;
-    }
-
-    let arguments = getDebateArguments(topic);
-    debateResponse.innerHTML = arguments;
-
-    xp += 10;
-    xpCounter.textContent = xp;
-});
-
-function getDebateArguments(topic) {
+    // 🎙️ Debate Data
     const debates = {
-        "ai-jobs": `
-        <h3>🟢 20 Pros of AI in Jobs</h3>
-        <ul>
-            <li>1. Increased efficiency</li>
-            <li>2. Cost reduction</li>
-            <li>3. New job creation</li>
-            <li>4. Automation of repetitive tasks</li>
-            <li>5. Higher productivity</li>
-        </ul>
-        <h3>🔴 20 Cons of AI in Jobs</h3>
-        <ul>
-            <li>1. Job displacement</li>
-            <li>2. Ethical concerns</li>
-            <li>3. AI replacing human creativity</li>
-        </ul>`,
+        "Should school uniforms be mandatory?": {
+            pros: [
+                "Promotes equality among students.",
+                "Reduces peer pressure and bullying.",
+                "Saves money for families.",
+                "Encourages discipline.",
+                "Improves student focus.",
+            ],
+            cons: [
+                "Suppresses individuality.",
+                "Can be expensive for some families.",
+                "May not be comfortable for all students.",
+                "Does not improve academic performance.",
+                "Creates enforcement challenges.",
+            ],
+            arguments: [
+                "Mandatory uniforms ensure that students focus on learning, not fashion.",
+                "Allowing students to choose their clothing helps develop individuality and confidence.",
+            ],
+            counterarguments: [
+                "Creativity can still be expressed through extracurricular activities.",
+                "Uniforms can be designed to be comfortable and affordable.",
+            ],
+        },
+        "Should social media have age restrictions?": {
+            pros: [
+                "Protects young users from harmful content.",
+                "Reduces cyberbullying risks.",
+                "Encourages healthier social interactions.",
+                "Prevents data privacy violations.",
+                "Limits exposure to inappropriate advertisements.",
+            ],
+            cons: [
+                "Difficult to enforce effectively.",
+                "Could limit learning opportunities.",
+                "May encourage lying about age.",
+                "Parents should regulate, not laws.",
+                "Social media can be educational.",
+            ],
+            arguments: [
+                "Young minds are impressionable and need protection from harmful online influences.",
+                "Education about responsible usage is better than restrictions.",
+            ],
+            counterarguments: [
+                "Proper digital education can be more effective than bans.",
+                "Social media platforms should invest in better moderation instead of age restrictions.",
+            ],
+        },
     };
 
-    return debates[topic] || "<p>No debate found.</p>";
-}
+    // 🎯 Generate Full Debate
+    document.getElementById("generate-debate").addEventListener("click", function () {
+        let topic = document.getElementById("debate-topic").value;
+        let output = document.getElementById("debate-output");
 
-// Expandable Sections
-document.querySelectorAll(".expandable").forEach(header => {
-    header.addEventListener("click", function () {
-        const content = this.nextElementSibling;
-        content.style.display = content.style.display === "block" ? "none" : "block";
+        if (debates[topic]) {
+            let debateData = debates[topic];
+            let debateHTML = `<h3>Pros:</h3><ul>`;
+            debateData.pros.forEach((pro) => (debateHTML += `<li>${pro}</li>`));
+            debateHTML += `</ul><h3>Cons:</h3><ul>`;
+            debateData.cons.forEach((con) => (debateHTML += `<li>${con}</li>`));
+            debateHTML += `</ul><h3>Arguments:</h3><ul>`;
+            debateData.arguments.forEach((arg) => (debateHTML += `<li>${arg}</li>`));
+            debateHTML += `</ul><h3>Counterarguments:</h3><ul>`;
+            debateData.counterarguments.forEach((ctr) => (debateHTML += `<li>${ctr}</li>`));
+            debateHTML += `</ul>`;
+
+            output.innerHTML = debateHTML;
+
+            // 🏆 Increase XP
+            xp += 50;
+            document.getElementById("xp-count").innerText = xp;
+        } else {
+            output.innerHTML = "<p style='color:red;'>No debate found.</p>";
+        }
     });
 });
