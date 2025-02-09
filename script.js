@@ -15,105 +15,121 @@ function toggleSection(sectionId) {
 // Massive Debate Data
 const debates = {
     "school_uniforms": {
-        pros: [
-            "Creates equality among students", "Reduces peer pressure", "Encourages discipline",
-            "Saves time in the morning", "Prevents bullying based on clothing",
-            "Improves focus on academics", "Fosters a sense of belonging",
-            "Promotes school identity", "Reduces clothing costs for parents",
-            "Ensures appropriateness in dress code", "Helps students feel less judged",
-            "Prepares students for dress codes in workplaces",
-            "Eliminates distractions caused by fashion competition",
-            "Reduces socioeconomic differences", "Allows students to focus on character over appearance",
-            "Simplifies getting ready for school", "Helps teachers enforce a dress code more easily",
-            "Creates a professional learning environment", "Encourages students to express creativity in other ways",
-            "Studies suggest it improves attendance rates"
-        ],
-        cons: [
-            "Limits self-expression", "Can be expensive for families", "Uncomfortable for some students",
-            "Does not necessarily improve behavior", "Takes away individuality",
-            "Restricts freedom of choice", "Not always practical for hot climates",
-            "Some families struggle to afford uniforms", "May create resentment towards school policies",
-            "Does not prevent bullying entirely", "Could reduce student engagement",
-            "Can cause enforcement issues", "Students may feel forced into conformity",
-            "Does not help with real-world self-expression",
-            "Takes away an opportunity to learn responsibility through outfit choices",
-            "Some uniforms are outdated and unappealing", "Can be difficult to replace quickly if lost",
-            "May limit cultural dress expression", "Could make students feel like they have no personal style",
-            "No clear evidence links uniforms to better academic performance"
-        ],
-        arguments: [
-            "Uniforms improve student focus and reduce distractions.",
-            "Uniforms reduce bullying based on clothing differences.",
-            "School spirit and unity increase when students dress the same.",
-            "Families save money because they buy fewer casual clothes.",
-            "Uniforms encourage responsibility and discipline.",
-            "Schools with uniforms report fewer dress code violations.",
-            "Uniforms reduce social pressure to wear expensive brands.",
-            "Students learn to appreciate equality in attire.",
-            "Wearing uniforms can prepare students for professional dress codes.",
-            "Having uniforms prevents inappropriate clothing choices."
-        ],
-        counterArguments: [
-            "Uniforms do not impact students’ focus in the long term.",
-            "Students should have the right to express their individuality.",
-            "Forcing uniforms may create resentment and rebellion.",
-            "There are better ways to encourage school unity.",
-            "Dress codes can be enforced without requiring full uniforms.",
-            "The cost of uniforms can still be high for some families.",
-            "School should be a place of creativity and freedom.",
-            "Students will still find ways to judge each other based on appearance.",
-            "Uniforms do not teach students real-world decision-making.",
-            "Strict uniform policies create unnecessary stress."
-        ]
+        pros: ["Creates equality among students", "Reduces peer pressure", /* ADD 18 MORE PROS HERE */],
+        cons: ["Limits self-expression", "Can be expensive for families", /* ADD 18 MORE CONS HERE */],
+        arguments: ["Uniforms improve student focus and reduce distractions.", /* ADD 9 MORE ARGUMENTS */],
+        counterArguments: ["Uniforms do not impact students’ focus in the long term.", /* ADD 9 MORE COUNTERARGUMENTS */]
     },
     "social_media": {
+        pros: ["Encourages global communication", "Allows for educational content sharing", /* ADD 18 MORE PROS HERE */],
+        cons: ["Leads to cyberbullying", "Can be addictive", /* ADD 18 MORE CONS HERE */],
+        arguments: ["Social media enhances learning and communication.", /* ADD 9 MORE ARGUMENTS */],
+        counterArguments: ["Proper education on digital safety is a better solution.", /* ADD 9 MORE COUNTERARGUMENTS */]
+    },
+    "ai_jobs": {
         pros: [
-            "Encourages global communication", "Allows for educational content sharing",
-            "Can help businesses grow", "Raises awareness of important issues",
-            "Connects people from different cultures", "Enhances digital literacy",
-            "Gives young people a platform for activism", "Provides access to real-time news",
-            "Can be used for online learning", "Helps students engage in discussions",
-            "Builds networking opportunities", "Encourages creative expression",
-            "Can be used to raise charity funds", "Helps businesses reach new customers",
-            "Creates job opportunities in digital marketing", "Allows students to engage in debates online",
-            "Can provide mental health support communities", "Helps students develop persuasive writing skills",
-            "Encourages sharing of knowledge and research", "Can build online communities around shared interests"
+            "AI increases efficiency in industries", "Reduces human error", "Enhances medical diagnostics",
+            "Improves customer service automation", "Reduces operational costs", "AI can work 24/7 without breaks",
+            "Creates new job opportunities in AI fields", "Boosts productivity in workplaces",
+            "Enhances innovation and research", "Automates repetitive tasks", "Can improve education with AI tutors",
+            "AI helps in scientific discoveries", "Assists in space exploration", "Enables personalized learning experiences",
+            "AI reduces workload stress for employees", "AI enhances cybersecurity systems",
+            "Assists in disaster response and recovery", "Optimizes supply chain logistics", "Boosts agricultural productivity",
+            "Can help in financial forecasting and fraud detection"
         ],
         cons: [
-            "Leads to cyberbullying", "Can be addictive", "Exposes children to inappropriate content",
-            "Spreads misinformation", "Reduces face-to-face interaction",
-            "Leads to a decline in mental health", "Encourages unrealistic beauty standards",
-            "Creates distractions from academics", "Increases risk of privacy violations",
-            "Can encourage unhealthy comparison with others", "May lead to social isolation",
-            "Reduces time spent on physical activities", "Can promote harmful social trends",
-            "Can lead to identity theft", "Young users may develop a dependency on social media validation",
-            "Excessive screen time affects brain development in children",
-            "May increase levels of anxiety and depression", "Can expose people to hate speech",
-            "Encourages echo chambers and misinformation bubbles", "May be used as a tool for cyberstalking"
+            "Leads to job displacement", "Reduces demand for human workers", "AI lacks human emotional intelligence",
+            "Ethical concerns in decision-making", "Privacy risks and data security issues", "AI is expensive to develop",
+            "Bias in AI decision-making", "Can widen social inequality", "Lack of accountability for AI failures",
+            "AI may replace creative roles", "Increases reliance on technology", "Potential for widespread unemployment",
+            "Threats to job stability in traditional industries", "AI could be weaponized",
+            "Legal and ethical uncertainties", "Potential for manipulation using deepfake technology",
+            "AI-generated misinformation", "Could limit human creativity", "Lack of personal interaction in customer service",
+            "Companies may exploit AI for unethical gains"
         ],
         arguments: [
-            "Social media enhances learning and communication.",
-            "It provides young people with a platform for activism.",
-            "It helps businesses and entrepreneurs grow.",
-            "It keeps people connected despite long distances.",
-            "It encourages cultural exchange and education.",
-            "It gives a voice to underrepresented communities.",
-            "It helps people express creativity through art and writing.",
-            "It allows students to engage in online discussions and debates.",
-            "It provides free access to a wide range of educational resources.",
-            "It allows users to stay updated on global news events."
+            "AI enhances efficiency and reduces human error.",
+            "AI-driven automation creates new career opportunities.",
+            "AI improves accessibility for individuals with disabilities.",
+            "AI-driven analysis leads to better medical diagnoses.",
+            "AI optimizes workflow in companies, increasing productivity.",
+            "AI can take over dangerous jobs, ensuring human safety.",
+            "AI improves real-time language translation, enabling global communication.",
+            "AI reduces traffic congestion through intelligent transportation systems.",
+            "AI advancements lead to breakthrough discoveries in space exploration.",
+            "AI-powered cybersecurity reduces fraud and cyberattacks."
         ],
         counterArguments: [
-            "Proper education on digital safety is a better solution than restricting access.",
-            "Social media can lead to anxiety, depression, and social isolation.",
-            "It creates unrealistic expectations about life and body image.",
-            "The risk of cyberbullying is a significant concern.",
-            "Many young users are exposed to fake news and misinformation.",
-            "Social media addiction negatively impacts sleep and concentration.",
-            "It encourages mindless scrolling rather than meaningful interactions.",
-            "It makes young people more vulnerable to online predators.",
-            "Parents and schools should focus on guidance, not restrictions.",
-            "Better regulations can help make social media safer rather than banning it."
+            "AI threatens job security, especially in manufacturing and customer service.",
+            "AI lacks emotional intelligence and human creativity.",
+            "Overreliance on AI could reduce critical thinking skills.",
+            "AI may widen economic inequality by replacing low-income workers.",
+            "Unregulated AI development poses ethical and privacy risks.",
+            "AI can be biased if trained on flawed data.",
+            "Jobs lost to AI may not be replaced with equivalent opportunities.",
+            "AI decision-making lacks transparency and accountability.",
+            "AI-based misinformation and manipulation are growing concerns.",
+            "Humans should be prioritized over AI in creative and leadership roles."
+        ]
+    },
+    "gun_control": {
+        pros: [
+            "Reduces gun-related crimes", "Lowers homicide rates", "Prevents mass shootings",
+            "Stronger background checks prevent weapons falling into wrong hands",
+            "Decreases accidental firearm deaths", "Reduces suicide rates involving guns",
+            "Increases public safety", "Stricter laws lead to fewer illegal gun sales",
+            "Encourages responsible gun ownership", "Lessens gang-related gun violence",
+            "Prevents untrained individuals from handling firearms",
+            "Promotes peaceful conflict resolution", "Limits access to assault weapons",
+            "Stronger gun laws correlate with lower violent crime rates",
+            "Reduces gun thefts and illegal resales", "Protects law enforcement officers",
+            "Prevents domestic violence incidents from escalating into fatalities",
+            "Supports initiatives to decrease firearm accessibility for criminals",
+            "Improves national security", "Encourages use of alternative self-defense tools"
+        ],
+        cons: [
+            "Violates the right to bear arms", "Reduces personal protection ability",
+            "Gun bans do not stop criminals from obtaining weapons",
+            "Gun ownership deters crime", "May lead to black market firearm sales",
+            "Strict laws do not necessarily reduce gun-related deaths",
+            "Limits personal freedom and self-defense rights",
+            "Takes away sport shooting opportunities",
+            "Some gun laws disproportionately affect law-abiding citizens",
+            "Self-defense is harder without firearm access",
+            "Restricts rural citizens who rely on guns for protection",
+            "Reduces citizens’ ability to resist government tyranny",
+            "Gun-free zones attract criminals",
+            "Background checks can be invasive to personal privacy",
+            "Gun laws do not address root causes of violence",
+            "Criminals will always find ways to access firearms",
+            "Gun control does not prevent knife or other weapon-related crimes",
+            "Firearm bans do not stop gang-related activities",
+            "Law enforcement may struggle to enforce gun restrictions",
+            "Banning guns gives more power to criminals with illegal weapons"
+        ],
+        arguments: [
+            "Stricter gun laws have been shown to reduce homicide rates.",
+            "Gun control laws prevent access to weapons by dangerous individuals.",
+            "A decrease in gun availability leads to a decrease in mass shootings.",
+            "Background checks help keep guns away from criminals.",
+            "Gun control increases overall public safety.",
+            "Countries with strict gun laws report fewer gun-related deaths.",
+            "Firearm restrictions prevent unqualified individuals from handling weapons.",
+            "Reducing access to guns leads to lower suicide rates.",
+            "Stronger gun laws support responsible gun ownership.",
+            "Limiting access to high-capacity weapons reduces fatality risks."
+        ],
+        counterArguments: [
+            "Gun bans infringe on personal rights and self-defense.",
+            "Criminals will still find ways to obtain firearms illegally.",
+            "Law-abiding citizens should not be punished for others' actions.",
+            "Gun control does not reduce overall violence.",
+            "Other weapons can still be used in violent crimes.",
+            "Stricter laws could lead to an increase in illegal firearm trade.",
+            "Personal safety should not depend on government regulations.",
+            "Self-defense situations require quick firearm access.",
+            "Gun bans disproportionately affect citizens in high-crime areas.",
+            "Gun-free zones do not prevent crime; they invite criminals."
         ]
     }
 };
