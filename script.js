@@ -1,51 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const debateForm = document.getElementById("debate-form");
-    const debateInput = document.getElementById("debate-input");
-    const debateOutput = document.getElementById("debate-output");
-    const xpCounter = document.getElementById("xp-counter");
-    
-    let userXP = 0;
+    const debateForm = document.getElementById("debateForm");
+    const userInput = document.getElementById("userInput");
+    const output = document.getElementById("output");
+    const xpCounter = document.getElementById("xpCounter");
 
-    debateForm.addEventListener("submit", function (event) {
+    let userXP = 0; // Initialize XP counter
+
+    debateForm.addEventListener("submit", async function (event) {
         event.preventDefault();
-        const debateTopic = debateInput.value.trim();
-        
-        if (debateTopic === "") {
-            debateOutput.innerHTML = "<p>Please enter a debate topic!</p>";
-            return;
-        }
+        const topic = userInput.value.trim();
 
-        // Call the AI backend on Glitch
-        fetch("https://sulfuric-bloom-earwig.glitch.me/api/debate", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ topic: debateTopic }),
-        })
-        .then(response => response.json())
-        .then(data => {
+        if (!topic) return;
+
+        output.innerHTML = `<p><strong>You:</strong> ${topic}</p><p>Generating debate...</p>`;
+
+        try {
+            const response = await fetch("https://sulfuric-bloom-earwig.glitch.me/api/debate", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ topic }),
+            });
+
+            const data = await response.json();
             if (data.error) {
-                debateOutput.innerHTML = `<p>Error: ${data.error}</p>`;
+                output.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
             } else {
-                debateOutput.innerHTML = `
-                    <h3>Debate Topic: ${debateTopic}</h3>
-                    <h4>Pro Arguments:</h4>
-                    <p>${data.pros.join("<br>")}</p>
-                    <h4>Con Arguments:</h4>
-                    <p>${data.cons.join("<br>")}</p>
-                    <h4>Counterarguments:</h4>
-                    <p>${data.counters.join("<br>")}</p>
-                `;
+                output.innerHTML = `<p><strong>Debate:</strong></p><p>${data.response.replace(/\n/g, "<br>")}</p>`;
 
-                // Earn XP when user generates a debate
-                userXP += 10;
-                xpCounter.innerHTML = `Your XP: ${userXP}`;
+                userXP += 10; // Add XP automatically
+                xpCounter.innerText = `Your XP: ${userXP}`;
             }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            debateOutput.innerHTML = "<p>Something went wrong. Try again later.</p>";
-        });
+        } catch (error) {
+            output.innerHTML = `<p style="color:red;">Failed to fetch debate. Try again later.</p>`;
+        }
+    });
 
-        debateInput.value = "";
+    // ✅ Fix Sample Debate Topics - Clicking Should Show a Full Debate
+    document.querySelectorAll(".debate-topic").forEach(topic => {
+        topic.addEventListener("click", async function () {
+            const topicText = this.textContent;
+            output.innerHTML = `<p><strong>Topic:</strong> ${topicText}</p><p>Generating full debate...</p>`;
+
+            try {
+                const response = await fetch("https://sulfuric-bloom-earwig.glitch.me/api/debate", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ topic: topicText }),
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    output.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
+                } else {
+                    output.innerHTML = `<p><strong>Debate:</strong></p><p>${data.response.replace(/\n/g, "<br>")}</p>`;
+
+                    userXP += 10; // Add XP automatically
+                    xpCounter.innerText = `Your XP: ${userXP}`;
+                }
+            } catch (error) {
+                output.innerHTML = `<p style="color:red;">Failed to fetch debate. Try again later.</p>`;
+            }
+        });
     });
 });
