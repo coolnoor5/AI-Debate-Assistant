@@ -1,12 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     text-align: center;
-    background-color: #fef0e6;
+    background-color: #fef0e6; /* Soft beige */
     color: #333;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     padding: 20px;
     background: white;
@@ -16,6 +16,15 @@ body {
 
 h1 {
     color: #ff69b4;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h2 {
+    background-color: #ffe4e1;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 22px;
 }
 
 select, button {
@@ -23,6 +32,7 @@ select, button {
     margin: 10px;
     border-radius: 10px;
     font-size: 16px;
+    border: none;
 }
 
 button {
@@ -30,17 +40,12 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    padding: 12px;
+    transition: 0.3s;
 }
 
 button:hover {
     background-color: #d10073;
-}
-
-.response {
-    margin-top: 20px;
-    padding: 15px;
-    background: #f3e5f5;
-    border-radius: 15px;
 }
 
 .bubble {
@@ -51,6 +56,8 @@ button:hover {
     border-radius: 20px;
     font-size: 18px;
     font-weight: bold;
+    width: 80%;
+    text-align: left;
 }
 
 .hidden {
@@ -61,4 +68,5 @@ button:hover {
     font-size: 14px;
     color: #777;
     margin-left: 5px;
+    cursor: pointer;
 }
