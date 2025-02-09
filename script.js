@@ -22,7 +22,12 @@ function generateDebate() {
 
 function toggleDebate(id) {
     let debate = document.getElementById(id);
-    debate.style.display = debate.style.display === "none" ? "block" : "none";
+    if (debate.style.display === "none") {
+        debate.style.display = "block";
+        earnXP(); // Earn XP when opening a debate
+    } else {
+        debate.style.display = "none";
+    }
 }
 
 function toggleTip(id) {
