@@ -21,20 +21,14 @@ document.getElementById("generate-debate").addEventListener("click", function ()
 function getDebateArguments(topic) {
     const debates = {
         "school-uniforms": `
-            <h3>🟢 Opening Statement (Pro):</h3>
-            <p>Wearing school uniforms promotes equality, reduces distractions, and fosters a sense of unity.</p>
-            <h3>🔴 Opening Statement (Con):</h3>
-            <p>Mandatory uniforms take away students' individuality and freedom of expression.</p>
-            <h3>⚖️ Counter-Argument:</h3>
-            <p>While uniforms ensure equality, schools can allow creativity in accessories.</p>
+            <div class="bubble">🟢 Pro: Uniforms create equality and reduce peer pressure.</div>
+            <div class="bubble">🔴 Con: Uniforms limit student expression and individuality.</div>
+            <div class="bubble">⚖️ Counter-Argument: While uniforms limit creativity, they help students focus on learning.</div>
         `,
         "social-media": `
-            <h3>🟢 Opening Statement (Pro):</h3>
-            <p>Age restrictions on social media protect young minds from harmful content and cyberbullying.</p>
-            <h3>🔴 Opening Statement (Con):</h3>
-            <p>Social media is a way for youth to express themselves and connect with others.</p>
-            <h3>⚖️ Counter-Argument:</h3>
-            <p>Instead of strict bans, parents and schools can teach responsible usage.</p>
+            <div class="bubble">🟢 Pro: Protects kids from harmful content.</div>
+            <div class="bubble">🔴 Con: Limits freedom of expression.</div>
+            <div class="bubble">⚖️ Counter-Argument: Instead of bans, parents should guide responsible usage.</div>
         `,
     };
     
