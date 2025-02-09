@@ -1,35 +1,58 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const debateForm = document.getElementById("debate-form");
-    const debateInput = document.getElementById("debate-topic");
-    const responseBox = document.getElementById("debate-response");
+const API_KEY = "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"; // 🔴 Replace this with your real API key
+const XP_INCREMENT = 10;
+let xp = 0;
 
-    debateForm.addEventListener("submit", async function (event) {
-        event.preventDefault();
-        const topic = debateInput.value.trim();
+// Function to handle sending the debate topic
+document.getElementById("submit-btn").addEventListener("click", async () => {
+    const topic = document.getElementById("debate-topic").value;
+    const errorMessage = document.getElementById("error-message");
+    const debateResponse = document.getElementById("debate-response");
 
-        if (!topic) {
-            responseBox.innerHTML = "<p style='color: red;'>Please enter a debate topic.</p>";
-            return;
-        }
+    errorMessage.textContent = "";
+    debateResponse.innerHTML = "";
 
-        responseBox.innerHTML = "<p>Generating debate...</p>";
+    if (!topic) {
+        errorMessage.textContent = "Please enter a topic.";
+        return;
+    }
 
-        try {
-            const response = await fetch("https://debate-assistant-api.onrender.com/api/debate", { // Your Render API
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ topic })
-            });
+    try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${API_KEY}`
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages: [
+                    {
+                        role: "system",
+                        content: "You are an expert debater. Provide a full debate including pros, cons, counterarguments, and a conclusion."
+                    },
+                    {
+                        role: "user",
+                        content: topic
+                    }
+                ]
+            })
+        });
 
-            const data = await response.json();
+        if (!response.ok) throw new Error("Failed to generate debate.");
 
-            if (data.error) {
-                responseBox.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
-            } else {
-                responseBox.innerHTML = `<h3>Debate:</h3><p>${data.debate.replace(/\n/g, "<br>")}</p>`;
-            }
-        } catch (error) {
-            responseBox.innerHTML = "<p style='color: red;'>Failed to fetch debate. Please try again.</p>";
-        }
+        const data = await response.json();
+        const result = data.choices[0].message.content;
+        debateResponse.innerHTML = `<p>${result.replace(/\n/g, "<br>")}</p>`;
+        xp += XP_INCREMENT;
+        document.getElementById("xp-count").textContent = xp;
+    } catch (error) {
+        errorMessage.textContent = "An error occurred while generating the debate. Please try again.";
+    }
+});
+
+// Handle sample debate topics click events
+document.querySelectorAll("#sample-topics li").forEach((topic) => {
+    topic.addEventListener("click", () => {
+        document.getElementById("debate-topic").value = topic.textContent;
     });
 });
