@@ -1,58 +1,47 @@
-const API_KEY = "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"; // Replace with your actual API key
 const XP_INCREMENT = 10;
 let xp = 0;
 
-document.addEventListener("DOMContentLoaded", function () {
-    const debateForm = document.getElementById("debate-topic");
-    const submitButton = document.getElementById("submit-btn");
+document.getElementById("generate-debate").addEventListener("click", function () {
+    const topic = document.getElementById("debate-topics").value;
     const debateResponse = document.getElementById("debate-response");
     const xpCounter = document.getElementById("xp-count");
 
-    submitButton.addEventListener("click", async function () {
-        const topic = debateForm.value.trim();
-        if (!topic) {
-            debateResponse.innerHTML = "<p style='color: red;'>⚠️ Please enter a debate topic.</p>";
-            return;
-        }
+    if (!topic) {
+        debateResponse.innerHTML = "<p style='color: red;'>⚠️ Please select a debate topic.</p>";
+        return;
+    }
 
-        debateResponse.innerHTML = "⏳ Generating debate, please wait...";
+    let arguments = getDebateArguments(topic);
+    debateResponse.innerHTML = arguments;
 
-        try {
-            const response = await fetch("https://api.openai.com/v1/chat/completions", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${API_KEY}`
-                },
-                body: JSON.stringify({
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        { role: "system", content: "You are an AI debate assistant. Provide a structured debate including pros, cons, counterarguments, and a conclusion for any given topic." },
-                        { role: "user", content: `Debate the topic: ${topic}` }
-                    ]
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error(`API request failed with status ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (data.choices && data.choices.length > 0) {
-                debateResponse.innerHTML = `<p>${data.choices[0].message.content.replace(/\n/g, "<br>")}</p>`;
-                xp += XP_INCREMENT;
-                xpCounter.textContent = xp;
-            } else {
-                throw new Error("AI did not return a valid response.");
-            }
-        } catch (error) {
-            debateResponse.innerHTML = `<p style='color: red;'>⚠️ Error: ${error.message}</p>`;
-        }
-    });
-
-    document.querySelectorAll("#sample-topics li").forEach((topic) => {
-        topic.addEventListener("click", () => {
-            debateForm.value = topic.textContent;
-        });
-    });
+    xp += XP_INCREMENT;
+    xpCounter.textContent = xp;
 });
+
+function getDebateArguments(topic) {
+    const debates = {
+        "school-uniforms": `
+            <h3>🟢 Opening Statement (Pro):</h3>
+            <p>Wearing school uniforms promotes equality, reduces distractions, and fosters a sense of unity.</p>
+            <h3>🔴 Opening Statement (Con):</h3>
+            <p>Mandatory uniforms take away students' individuality and freedom of expression.</p>
+            <h3>⚖️ Counter-Argument:</h3>
+            <p>While uniforms ensure equality, schools can allow creativity in accessories.</p>
+        `,
+        "social-media": `
+            <h3>🟢 Opening Statement (Pro):</h3>
+            <p>Age restrictions on social media protect young minds from harmful content and cyberbullying.</p>
+            <h3>🔴 Opening Statement (Con):</h3>
+            <p>Social media is a way for youth to express themselves and connect with others.</p>
+            <h3>⚖️ Counter-Argument:</h3>
+            <p>Instead of strict bans, parents and schools can teach responsible usage.</p>
+        `,
+    };
+    
+    return debates[topic] || "<p>No debate found.</p>";
+}
+
+function toggleTip(tipId) {
+    let tip = document.getElementById(`tip${tipId}`);
+    tip.classList.toggle("hidden");
+}
