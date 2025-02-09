@@ -1,11 +1,9 @@
-let xp = 0;
-
-function sendMessage() {
-    let userInput = document.getElementById("user-input").value;
-    if (userInput.trim() === "") return;
-
-    let chatHistory = document.getElementById("chat-history");
-    chatHistory.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+function getDebate() {
+    const userInput = document.getElementById("userInput").value;
+    if (!userInput.trim()) {
+        alert("Please enter a debate topic!");
+        return;
+    }
 
     fetch("https://your-glitch-project.glitch.me/api/debate", {
         method: "POST",
@@ -14,12 +12,15 @@ function sendMessage() {
     })
     .then(response => response.json())
     .then(data => {
-        chatHistory.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-
-        // Add XP points
-        xp += 10;
-        document.getElementById("xp-counter").textContent = xp;
+        document.getElementById("response").innerText = data.response || "Error: Could not fetch argument.";
     })
     .catch(error => console.error("Error:", error));
+}
+
+// XP Rewards System
+let xp = 0;
+
+function earnXP() {
+    xp += 10;
+    document.getElementById("xp-count").innerText = xp;
 }
