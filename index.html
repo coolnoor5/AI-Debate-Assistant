@@ -5,69 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Debate Assistant</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
 
-    <header>
-        <h1>🎤 AI Debate Assistant 🎤</h1>
-        <p>Welcome to your interactive debate preparation tool!</p>
-    </header>
+    <h1>🎤 AI Debate Assistant</h1>
+    <p>Enter a debate topic, and I'll generate a full debate for you!</p>
+    
+    <form id="debateForm">
+        <input type="text" id="userInput" placeholder="Type your debate topic here...">
+        <button type="submit">Send</button>
+    </form>
+    
+    <div id="output"></div>
 
-    <section>
-        <h2>🔍 Enter a Debate Topic</h2>
-        <p>Type your debate topic below and get arguments & counterarguments.</p>
-        <input type="text" id="debateInput" placeholder="E.g., Should school uniforms be mandatory?">
-        <button onclick="generateDebate()">Send</button>
-        <p id="debateOutput"></p>
-    </section>
+    <h2>🏆 XP & Rewards</h2>
+    <p id="xpCounter">Your XP: 0</p>
 
-    <section>
-        <h2>🏆 XP & Rewards</h2>
-        <p>Your XP: <span id="xpCounter">0</span></p>
-    </section>
+    <h2>🎤 Sample Debate Topics</h2>
+    <ul id="debate-topics">
+        <li class="debate-topic">Should school uniforms be mandatory?</li>
+        <li class="debate-topic">Should social media have age restrictions?</li>
+        <li class="debate-topic">Is AI taking over human jobs?</li>
+        <li class="debate-topic">Should homework be banned?</li>
+        <li class="debate-topic">Is online learning better than in-person learning?</li>
+        <li class="debate-topic">Should animal testing be banned?</li>
+        <li class="debate-topic">Is climate change the biggest problem we face?</li>
+        <li class="debate-topic">Should students have a 4-day school week?</li>
+    </ul>
 
-    <section>
-        <h2>📚 Sample Debate Topics</h2>
-        <ul>
-            <li onclick="toggleDebate('debate1')">🎓 <strong>Should school uniforms be mandatory?</strong></li>
-            <div id="debate1" class="debate-box hidden">
-                <p><strong>🟢 Pro (For Uniforms):</strong> "Uniforms create equality and reduce bullying."</p>
-                <p><strong>🔴 Con (Against Uniforms):</strong> "But they limit self-expression and force students into conformity."</p>
-                <p><strong>🟢 Pro:</strong> "It also makes mornings easier—no need to decide what to wear!"</p>
-                <p><strong>🔴 Con:</strong> "But some parents can't afford extra uniforms. That creates new problems."</p>
-                <p><strong>🟢 Pro:</strong> "Studies show that school performance improves when students wear uniforms."</p>
-                <p><strong>🔴 Con:</strong> "But uniforms don't stop bullying completely. Kids can still find other ways to judge."</p>
-            </div>
+    <h2>📢 Essential Debate Tips</h2>
+    <ul id="debate-tips">
+        <li><strong>Do Your Research:</strong> Always be prepared with strong evidence.</li>
+        <li><strong>Stay Calm and Confident:</strong> Confidence makes your argument more convincing.</li>
+        <li><strong>Listen to Opponents:</strong> Understanding their arguments helps you counter them.</li>
+        <li><strong>Use Clear Language:</strong> Avoid overly complicated words; be direct and persuasive.</li>
+        <li><strong>Structure Your Argument:</strong> Use the <strong>Claim, Evidence, Reasoning (CER)</strong> method.</li>
+        <li><strong>Engage with Emotion:</strong> Persuasion is not just logic—show passion for your stance.</li>
+    </ul>
 
-            <li onclick="toggleDebate('debate2')">🤖 <strong>Will AI take over jobs?</strong></li>
-            <div id="debate2" class="debate-box hidden">
-                <p><strong>🟢 Pro (AI Will Replace Jobs):</strong> "Automation is reducing jobs in many industries."</p>
-                <p><strong>🔴 Con (AI Won’t Replace Jobs):</strong> "AI also creates new job opportunities in tech fields."</p>
-                <p><strong>🟢 Pro:</strong> "Yet, not everyone can suddenly become a programmer. What happens to those workers?"</p>
-                <p><strong>🔴 Con:</strong> "We must focus on retraining workers instead of fearing AI."</p>
-            </div>
-        </ul>
-    </section>
+    <h2>🎭 Fun Debate Facts</h2>
+    <ul id="fun-facts">
+        <li>🧠 The fastest debater in the world can speak <strong>400 words per minute</strong>!</li>
+        <li>🎤 The longest debate in history lasted <strong>58 hours</strong>!</li>
+        <li>🏆 The first-ever debate competition was held in <strong>1892</strong> at Harvard.</li>
+        <li>📜 Ancient Greeks used debates to <strong>train politicians</strong>!</li>
+        <li>💡 The <strong>most debated topic</strong> in history? The existence of <strong>aliens</strong>! 👽</li>
+    </ul>
 
-    <section>
-        <h2>🔥 Debate Tips</h2>
-        <ul>
-            <li onclick="toggleTip('tip1')">📝 <strong>Structure Your Argument</strong></li>
-            <p id="tip1" class="hidden">Start with a strong opening, present key points, and end with a solid conclusion.</p>
-
-            <li onclick="toggleTip('tip2')">📊 <strong>Use Strong Evidence</strong></li>
-            <p id="tip2" class="hidden">Use statistics, facts, and expert opinions to support your claims.</p>
-        </ul>
-    </section>
-
-    <section>
-        <h2>🎉 Fun Debate Facts</h2>
-        <ul>
-            <li>🗣️ The first recorded debates happened in **Ancient Greece** over 2,400 years ago!</li>
-            <li>🏆 Many famous world leaders were debaters.</li>
-        </ul>
-    </section>
-
+    <script src="script.js"></script>
 </body>
 </html>
