@@ -7,12 +7,56 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>AI Debate Assistant</h1>
-    <form id="debateForm">
-        <input type="text" id="debateInput" placeholder="Enter a debate topic..." required>
-        <button type="submit">Generate Debate</button>
-    </form>
-    <div id="debateOutput"></div>
+    <div class="container">
+        <h1>🎙️ AI Debate Assistant</h1>
+        <p>Ask a debate question and receive a full AI-generated debate!</p>
+
+        <input type="text" id="debate-topic" placeholder="Enter a debate topic...">
+        <button id="submit-btn">Generate Debate</button>
+        <p id="error-message" class="error"></p>
+
+        <div class="response">
+            <h2>💡 AI-Generated Debate</h2>
+            <div id="debate-response"></div>
+        </div>
+
+        <section>
+            <h2>🏆 XP & Rewards</h2>
+            <p>Your XP: <span id="xp-count">0</span></p>
+        </section>
+
+        <section>
+            <h2>🎤 Sample Debate Topics</h2>
+            <ul id="sample-topics">
+                <li>Should school uniforms be mandatory?</li>
+                <li>Should social media have age restrictions?</li>
+                <li>Is AI taking over human jobs?</li>
+                <li>Should homework be banned?</li>
+                <li>Is online learning better than in-person learning?</li>
+                <li>Should animal testing be banned?</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🧠 Fun Facts About Debating</h2>
+            <ul id="debate-facts">
+                <li>🗣️ Debating improves critical thinking and speaking skills.</li>
+                <li>🏛️ The world's first recorded debate was in ancient Greece.</li>
+                <li>📚 Many famous leaders were debaters in school!</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📢 Debate Tips</h2>
+            <ul id="debate-tips">
+                <li>🔹 Always research both sides of the argument.</li>
+                <li>🔹 Use facts, not emotions, to support your points.</li>
+                <li>🔹 Speak clearly and confidently.</li>
+                <li>🔹 Respect your opponent's arguments.</li>
+            </ul>
+        </section>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
