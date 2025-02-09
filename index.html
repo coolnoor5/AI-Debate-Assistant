@@ -7,51 +7,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <h1>🎙️ AI Debate Assistant</h1>
+        <p>Enter a debate topic, and I'll generate a full debate for you!</p>
+        
+        <input type="text" id="debate-topic" placeholder="Enter a debate topic...">
+        <button id="submit-btn">Send</button>
+        <p id="error-message" class="error"></p>
 
-    <h1>🎤 AI Debate Assistant</h1>
-    <p>Enter a debate topic, and I'll generate a full debate for you!</p>
+        <div class="response">
+            <h2>💡 Generated Debate</h2>
+            <div id="debate-response"></div>
+        </div>
+
+        <section>
+            <h2>🏆 XP & Rewards</h2>
+            <p>Your XP: <span id="xp-count">0</span></p>
+        </section>
+
+        <section>
+            <h2>🎤 Sample Debate Topics</h2>
+            <ul id="sample-topics">
+                <li>Should school uniforms be mandatory?</li>
+                <li>Should social media have age restrictions?</li>
+                <li>Is AI taking over human jobs?</li>
+                <li>Should homework be banned?</li>
+                <li>Is online learning better than in-person learning?</li>
+                <li>Should animal testing be banned?</li>
+            </ul>
+        </section>
+    </div>
     
-    <form id="debateForm">
-        <input type="text" id="userInput" placeholder="Type your debate topic here...">
-        <button type="submit">Send</button>
-    </form>
-    
-    <div id="output"></div>
-
-    <h2>🏆 XP & Rewards</h2>
-    <p id="xpCounter">Your XP: 0</p>
-
-    <h2>🎤 Sample Debate Topics</h2>
-    <ul id="debate-topics">
-        <li class="debate-topic">Should school uniforms be mandatory?</li>
-        <li class="debate-topic">Should social media have age restrictions?</li>
-        <li class="debate-topic">Is AI taking over human jobs?</li>
-        <li class="debate-topic">Should homework be banned?</li>
-        <li class="debate-topic">Is online learning better than in-person learning?</li>
-        <li class="debate-topic">Should animal testing be banned?</li>
-        <li class="debate-topic">Is climate change the biggest problem we face?</li>
-        <li class="debate-topic">Should students have a 4-day school week?</li>
-    </ul>
-
-    <h2>📢 Essential Debate Tips</h2>
-    <ul id="debate-tips">
-        <li><strong>Do Your Research:</strong> Always be prepared with strong evidence.</li>
-        <li><strong>Stay Calm and Confident:</strong> Confidence makes your argument more convincing.</li>
-        <li><strong>Listen to Opponents:</strong> Understanding their arguments helps you counter them.</li>
-        <li><strong>Use Clear Language:</strong> Avoid overly complicated words; be direct and persuasive.</li>
-        <li><strong>Structure Your Argument:</strong> Use the <strong>Claim, Evidence, Reasoning (CER)</strong> method.</li>
-        <li><strong>Engage with Emotion:</strong> Persuasion is not just logic—show passion for your stance.</li>
-    </ul>
-
-    <h2>🎭 Fun Debate Facts</h2>
-    <ul id="fun-facts">
-        <li>🧠 The fastest debater in the world can speak <strong>400 words per minute</strong>!</li>
-        <li>🎤 The longest debate in history lasted <strong>58 hours</strong>!</li>
-        <li>🏆 The first-ever debate competition was held in <strong>1892</strong> at Harvard.</li>
-        <li>📜 Ancient Greeks used debates to <strong>train politicians</strong>!</li>
-        <li>💡 The <strong>most debated topic</strong> in history? The existence of <strong>aliens</strong>! 👽</li>
-    </ul>
-
     <script src="script.js"></script>
 </body>
 </html>
