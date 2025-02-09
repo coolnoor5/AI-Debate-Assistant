@@ -31,26 +31,51 @@
     <section>
         <h2>📚 Sample Debate Topics</h2>
         <ul>
-            <li><a href="school-uniforms.html">Should school uniforms be mandatory?</a></li>
-            <li><a href="ai-jobs.html">Will AI take over jobs?</a></li>
-            <li><a href="homework.html">Is homework necessary for learning?</a></li>
+            <li onclick="toggleDebate('debate1')">🎓 Should school uniforms be mandatory?</li>
+            <div id="debate1" class="debate-box hidden">
+                <p><strong>🟢 Pro:</strong> "Uniforms create equality and reduce bullying."</p>
+                <p><strong>🔴 Con:</strong> "But they limit self-expression and force students into conformity."</p>
+            </div>
+
+            <li onclick="toggleDebate('debate2')">🤖 Will AI take over jobs?</li>
+            <div id="debate2" class="debate-box hidden">
+                <p><strong>🟢 Pro:</strong> "Automation is reducing jobs in many industries."</p>
+                <p><strong>🔴 Con:</strong> "AI also creates new job opportunities in tech fields."</p>
+            </div>
+
+            <li onclick="toggleDebate('debate3')">📚 Is homework necessary for learning?</li>
+            <div id="debate3" class="debate-box hidden">
+                <p><strong>🟢 Pro:</strong> "It helps students reinforce what they learn."</p>
+                <p><strong>🔴 Con:</strong> "Excessive homework causes stress and reduces free time."</p>
+            </div>
         </ul>
     </section>
 
     <section>
-        <h2>📖 Debate Tips</h2>
+        <h2>🔥 Debate Tips</h2>
         <ul>
-            <li><a href="debate-tip-1.html">Structure Your Argument</a></li>
-            <li><a href="debate-tip-2.html">Use Strong Evidence</a></li>
-            <li><a href="debate-tip-3.html">Speak Clearly & Confidently</a></li>
-            <li><a href="debate-tip-4.html">Listen to Your Opponent</a></li>
-            <li><a href="debate-tip-5.html">Control Your Body Language</a></li>
+            <li onclick="toggleTip('tip1')">📝 **Structure Your Argument**</li>
+            <p id="tip1" class="hidden">Start with a strong opening, present key points, and end with a solid conclusion.</p>
+
+            <li onclick="toggleTip('tip2')">📊 **Use Strong Evidence**</li>
+            <p id="tip2" class="hidden">Use statistics, facts, and expert opinions to support your claims.</p>
+
+            <li onclick="toggleTip('tip3')">🎙️ **Speak Clearly & Confidently**</li>
+            <p id="tip3" class="hidden">Maintain eye contact, use clear pronunciation, and control your tone.</p>
+
+            <li onclick="toggleTip('tip4')">👂 **Listen to Your Opponent**</li>
+            <p id="tip4" class="hidden">A strong debater doesn't just talk—they also listen and respond effectively.</p>
         </ul>
     </section>
 
     <section>
         <h2>🎉 Fun Debate Facts</h2>
-        <a href="debate-facts.html">Click here to see fun facts about debating!</a>
+        <ul>
+            <li>🗣️ The first recorded debates happened in **Ancient Greece** over 2,400 years ago!</li>
+            <li>🏆 Many famous world leaders were debaters.</li>
+            <li>🎤 Debating can improve your **critical thinking, public speaking, and persuasion skills**.</li>
+            <li>📺 Presidential debates influence millions of voters.</li>
+        </ul>
     </section>
 
 </body>
