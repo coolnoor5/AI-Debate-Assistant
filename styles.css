@@ -1,11 +1,13 @@
+/* General Styling */
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #ffecf2;
+    background-color: #fffaf1;
     color: #333;
     padding: 20px;
 }
 
+/* Header */
 header {
     background: linear-gradient(to right, #ff9a9e, #fad0c4);
     padding: 20px;
@@ -15,28 +17,43 @@ header {
     font-weight: bold;
 }
 
+/* Section Styling */
+section {
+    padding: 30px;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 10px;
+}
+
+/* Different Background Colors for Each Section */
+#chatbot { background-color: #ffebf3; } /* Pastel Pink */
+#debate-tips { background-color: #e6f7ff; } /* Pastel Blue */
+#sample-debates { background-color: #efe6ff; } /* Pastel Purple */
+#debate-essays { background-color: #fff3e6; } /* Beige */
+#fun-facts { background-color: #e6ffee; } /* Light Green */
+#xp-rewards { background-color: #fffde7; } /* Light Yellow */
+
+/* Headings */
 h1, h2 {
     color: #ff4081;
 }
 
-p {
-    font-size: 18px;
-    margin: 10px;
-}
-
+/* List Items */
 ul {
     list-style-type: none;
     padding: 10px;
 }
 
 ul li {
-    background: #fff3f3;
+    background: white;
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
     font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Buttons */
 button {
     background-color: #ff4081;
     color: white;
@@ -51,6 +68,7 @@ button:hover {
     background-color: #e91e63;
 }
 
+/* Footer */
 footer {
     margin-top: 20px;
     background-color: #ff9a9e;
