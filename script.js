@@ -1,4 +1,4 @@
-const API_KEY = "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"; // 🔴 Replace with your real OpenAI API key
+const API_KEY = "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"; // Replace with your actual API key
 const XP_INCREMENT = 10;
 let xp = 0;
 
@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const debateResponse = document.getElementById("debate-response");
     const xpCounter = document.getElementById("xp-count");
 
-    // Function to generate debate when button is clicked
     submitButton.addEventListener("click", async function () {
         const topic = debateForm.value.trim();
         if (!topic) {
@@ -28,28 +27,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify({
                     model: "gpt-3.5-turbo",
                     messages: [
-                        { role: "system", content: "You are an expert debater. Provide multiple arguments for and against the given topic, along with counterarguments and a conclusion." },
-                        { role: "user", content: topic }
+                        { role: "system", content: "You are an AI debate assistant. Provide a structured debate including pros, cons, counterarguments, and a conclusion for any given topic." },
+                        { role: "user", content: `Debate the topic: ${topic}` }
                     ]
                 })
             });
 
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+
             const data = await response.json();
             if (data.choices && data.choices.length > 0) {
                 debateResponse.innerHTML = `<p>${data.choices[0].message.content.replace(/\n/g, "<br>")}</p>`;
-                
-                // Increase XP automatically
                 xp += XP_INCREMENT;
                 xpCounter.textContent = xp;
             } else {
-                debateResponse.innerHTML = "<p style='color: red;'>⚠️ Unable to generate a debate. Please try again.</p>";
+                throw new Error("AI did not return a valid response.");
             }
         } catch (error) {
-            debateResponse.innerHTML = "<p style='color: red;'>⚠️ Error: Something went wrong. Please try again.</p>";
+            debateResponse.innerHTML = `<p style='color: red;'>⚠️ Error: ${error.message}</p>`;
         }
     });
 
-    // Make sample debate topics clickable
     document.querySelectorAll("#sample-topics li").forEach((topic) => {
         topic.addEventListener("click", () => {
             debateForm.value = topic.textContent;
