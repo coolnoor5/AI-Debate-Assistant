@@ -1,60 +1,60 @@
 body {
-    background-color: #F8EDEB;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #ffe6f2;
     color: #333;
 }
 
 .container {
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 700px;
+    margin: auto;
     padding: 20px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-    color: #B5838D;
-    font-weight: bold;
+    color: #ff1493;
 }
 
-textarea {
-    width: 80%;
-    height: 100px;
+select, button {
     padding: 10px;
     margin: 10px;
-    border: 2px solid #B5838D;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 button {
-    background-color: #6D6875;
+    background-color: #ff1493;
     color: white;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #FFCDB2;
+    background-color: #d10073;
 }
 
-#debateResponse {
-    background: #FFF;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    border: 2px solid #FFB4A2;
+.response {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f3e5f5;
+    border-radius: 15px;
 }
 
-ul {
-    text-align: left;
+.bubble {
     display: inline-block;
+    padding: 15px;
     margin: 10px;
+    background: #ffc0cb;
+    border-radius: 20px;
 }
 
-li {
-    padding: 5px;
+.hidden {
+    display: none;
+}
+
+.arrow {
+    font-size: 14px;
+    color: #777;
 }
