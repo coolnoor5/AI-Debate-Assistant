@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Debate Assistant</title>
+    <title>AI Debate Assistant - The Ultimate Guide</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>🎙️ AI Debate Assistant</h1>
-        <p>Welcome! Select a debate topic and get full pre-made arguments.</p>
+        <p>Welcome! Select a debate topic and get full pre-made arguments, essays, and resources.</p>
 
         <h2>💡 Select a Debate Topic:</h2>
         <select id="debate-topics">
             <option value="">-- Choose a Topic --</option>
-            <option value="school-uniforms">Should school uniforms be mandatory?</option>
-            <option value="social-media">Should social media have age restrictions?</option>
             <option value="ai-jobs">Is AI taking over human jobs?</option>
             <option value="homework-ban">Should homework be banned?</option>
             <option value="climate-change">Is climate change the biggest crisis today?</option>
-            <option value="animal-testing">Should animal testing be banned?</option>
-            <option value="space-exploration">Should governments invest in space exploration?</option>
             <option value="free-education">Should university education be free for all?</option>
             <option value="gun-control">Should stricter gun control laws be implemented?</option>
-            <option value="video-games">Do video games cause violent behavior?</option>
+            <option value="space-exploration">Should governments fund space exploration?</option>
+            <option value="social-media-age">Should social media have age restrictions?</option>
         </select>
 
         <button id="generate-debate">Generate Full Debate</button>
-
         <div id="debate-response" class="bubble"></div>
 
         <section>
@@ -36,22 +32,61 @@
         </section>
 
         <section>
-            <h2>📢 Debate Tips (Click to Expand)</h2>
-            <ul id="debate-tips">
-                <li onclick="toggleTip(1)">🔹 How to start a strong opening statement? <span class="arrow">▼</span></li>
-                <p id="tip1" class="hidden">Start with a powerful question or a shocking fact to grab attention!</p>
-            </ul>
+            <h2 class="expandable">📢 Debate Tips (Click to Expand)</h2>
+            <div class="expandable-content">
+                <ul id="debate-tips-list"></ul>
+            </div>
         </section>
 
         <section>
-            <h2>🧠 Fun Debate Facts</h2>
-            <div class="bubble">🗣️ The world’s longest debate lasted **58 hours**!</div>
+            <h2 class="expandable">🧠 Fun Debate Facts (Click to Expand)</h2>
+            <div class="expandable-content">
+                <ul id="debate-facts-list"></ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="expandable">🎓 Beginner's Guide to Debating (Click to Expand)</h2>
+            <div class="expandable-content">
+                <ul id="beginner-tips-list"></ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="expandable">📜 Famous Historical Debates (Click to Expand)</h2>
+            <div class="expandable-content">
+                <ul id="historical-debates-list"></ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="expandable">👩‍🏫 Teachers' Corner (Click to Expand)</h2>
+            <div class="expandable-content">
+                <h3>📖 Study Guide for Teaching Debate</h3>
+                <p>A full study guide for teachers to introduce debating in class:</p>
+                <ul>
+                    <li>📝 Week 1: Introduction to Debating (What is a Debate?)</li>
+                    <li>🎤 Week 2: Structuring Arguments (Claim, Evidence, Warrant)</li>
+                    <li>💡 Week 3: Logical Fallacies (How to Identify and Avoid Them)</li>
+                    <li>📢 Week 4: Public Speaking Techniques (Confidence, Clarity, and Eye Contact)</li>
+                    <li>🗣️ Week 5: Counterarguments and Rebuttals</li>
+                    <li>🏆 Week 6: Mock Debates and Feedback Sessions</li>
+                </ul>
+
+                <h3>👩‍🏫 How Teachers Can Use This Website</h3>
+                <ul>
+                    <li>👩‍🏫 **Lesson Plans for Debating** - Ready-made lessons on structuring arguments.</li>
+                    <li>📖 **Classroom Debate Activities** - Fun ways to encourage participation.</li>
+                    <li>📊 **How to Grade Debate Assignments** - Rubrics and grading criteria.</li>
+                    <li>📝 **Printable Debate Worksheets** - Downloadable resources.</li>
+                    <li>🗣️ **How to Run a Classroom Debate** - A step-by-step guide.</li>
+                </ul>
+            </div>
         </section>
 
         <section>
             <h2>🇦🇪 Debate & The UAE</h2>
-            <p>The UAE encourages debating through national competitions, Model United Nations, and academic events.</p>
-            <p>The UAE's investment in education supports **SDG 4 (Quality Education)** and **SDG 9 (Innovation & Infrastructure).**</p>
+            <p>The UAE actively promotes debating through national competitions, Model United Nations, and academic events.</p>
         </section>
     </div>
 
