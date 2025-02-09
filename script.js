@@ -19,3 +19,13 @@ function generateDebate() {
 
     document.getElementById("debateOutput").innerText = response;
 }
+
+function toggleDebate(id) {
+    let debate = document.getElementById(id);
+    debate.style.display = debate.style.display === "none" ? "block" : "none";
+}
+
+function toggleTip(id) {
+    let tip = document.getElementById(id);
+    tip.style.display = tip.style.display === "none" ? "block" : "none";
+}
