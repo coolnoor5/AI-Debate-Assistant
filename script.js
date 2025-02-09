@@ -1,36 +1,51 @@
-let xp = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    const debateForm = document.getElementById("debate-form");
+    const debateInput = document.getElementById("debate-input");
+    const debateOutput = document.getElementById("debate-output");
+    const xpCounter = document.getElementById("xp-counter");
+    
+    let userXP = 0;
 
-function earnXP() {
-    xp += 10;  
-    document.getElementById("xpCounter").innerText = xp;
-    alert("🎉 You earned 10 XP!");
-}
+    debateForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const debateTopic = debateInput.value.trim();
+        
+        if (debateTopic === "") {
+            debateOutput.innerHTML = "<p>Please enter a debate topic!</p>";
+            return;
+        }
 
-function generateDebate() {
-    const topic = document.getElementById("debateInput").value;
-    if (topic.trim() === "") {
-        alert("Please enter a topic!");
-        return;
-    }
+        // Call the AI backend on Glitch
+        fetch("https://sulfuric-bloom-earwig.glitch.me/api/debate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ topic: debateTopic }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                debateOutput.innerHTML = `<p>Error: ${data.error}</p>`;
+            } else {
+                debateOutput.innerHTML = `
+                    <h3>Debate Topic: ${debateTopic}</h3>
+                    <h4>Pro Arguments:</h4>
+                    <p>${data.pros.join("<br>")}</p>
+                    <h4>Con Arguments:</h4>
+                    <p>${data.cons.join("<br>")}</p>
+                    <h4>Counterarguments:</h4>
+                    <p>${data.counters.join("<br>")}</p>
+                `;
 
-    let response = `For the topic "${topic}", here are some arguments: \n
-    ✅ PRO: [Strong reason supporting the topic] \n
-    ❌ CON: [Counterargument against the topic]`;
+                // Earn XP when user generates a debate
+                userXP += 10;
+                xpCounter.innerHTML = `Your XP: ${userXP}`;
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            debateOutput.innerHTML = "<p>Something went wrong. Try again later.</p>";
+        });
 
-    document.getElementById("debateOutput").innerText = response;
-}
-
-function toggleDebate(id) {
-    let debate = document.getElementById(id);
-    if (debate.style.display === "none") {
-        debate.style.display = "block";
-        earnXP(); // Earn XP when opening a debate
-    } else {
-        debate.style.display = "none";
-    }
-}
-
-function toggleTip(id) {
-    let tip = document.getElementById(id);
-    tip.style.display = tip.style.display === "none" ? "block" : "none";
-}
+        debateInput.value = "";
+    });
+});
