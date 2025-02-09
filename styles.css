@@ -1,75 +1,135 @@
+/* 🌟 General Page Styling */
 body {
-    font-family: "Arial", sans-serif;
-    text-align: center;
-    background-color: #ffe4e1; /* Soft pastel pink */
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffe6e6; /* Soft Pink Background */
     color: #333;
-    padding: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
+/* 🎨 Container */
 .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
     background: white;
+    padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* 🎙️ Title */
 h1 {
-    color: #ff69b4;
-    font-size: 35px;
-    font-weight: bold;
+    font-size: 2.2em;
+    color: #e6005c; /* Bright Pink */
+    text-shadow: 2px 2px 8px rgba(230, 0, 92, 0.3);
 }
 
+/* 🏆 Section Titles */
 h2 {
-    background-color: #ffcccb;
-    padding: 12px;
+    font-size: 1.8em;
+    background: #ff99c8; /* Soft Pink */
+    padding: 10px;
     border-radius: 10px;
-    font-size: 24px;
-    font-weight: bold;
+    color: white;
 }
 
-select, button {
-    padding: 12px;
-    margin: 10px;
-    border-radius: 10px;
-    font-size: 18px;
-    border: none;
+/* 💡 Debate Topic Dropdown */
+select {
+    font-size: 1em;
+    padding: 10px;
+    border: 2px solid #ff6699;
+    border-radius: 8px;
+    background: #fffaf0;
+    cursor: pointer;
 }
 
+/* 🎯 Buttons */
 button {
-    background-color: #ff69b4;
+    font-size: 1em;
+    padding: 10px 20px;
+    background: #e6005c; /* Bright Pink */
     color: white;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
-    padding: 12px;
     transition: 0.3s;
-    font-size: 18px;
 }
 
 button:hover {
-    background-color: #d10073;
+    background: #cc0052; /* Darker Pink */
 }
 
+/* 💬 Debate Response Bubble */
 .bubble {
-    display: inline-block;
+    background: #f8e6e6;
     padding: 15px;
-    margin: 10px;
-    background: #ffcccb;
-    border-radius: 20px;
-    font-size: 18px;
+    border-radius: 15px;
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+/* 🏆 XP Section */
+#xp-count {
     font-weight: bold;
-    width: 80%;
-    text-align: left;
+    font-size: 1.5em;
+    color: #e6005c;
 }
 
-.hidden {
-    display: none;
-}
-
-.arrow {
-    font-size: 14px;
-    color: #777;
-    margin-left: 5px;
+/* 🔽 Expandable Sections */
+.expandable {
+    background: #ff6699;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
     cursor: pointer;
+    margin: 10px 0;
+}
+
+.expandable:hover {
+    background: #cc0052;
+}
+
+/* Expandable Content */
+.expandable-content {
+    display: none;
+    padding: 10px;
+    background: #fff0f5;
+    border-radius: 8px;
+}
+
+/* 📝 Lists */
+ul {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    font-size: 1.1em;
+}
+
+/* 🏆 XP & Rewards */
+#xp-count {
+    color: #ff4500;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* 📚 Teachers' Corner */
+.teachers-section {
+    background: #ffcccb;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* 🇦🇪 UAE Debate Section */
+.uae-section {
+    background: #d4f1f9;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2em;
 }
