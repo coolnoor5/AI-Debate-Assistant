@@ -5,77 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Debate Assistant</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>🎤 AI Debate Assistant 🎤</h1>
-        <p>Your personal debate coach! Improve your arguments, challenge ideas, and become a debate champion! 🏆</p>
+        <h1>🎤 AI Debate Assistant</h1>
+        <p>Enter a debate topic, and I'll generate arguments and counterarguments.</p>
+        <input type="text" id="debateTopic" placeholder="Enter a debate topic">
+        <button onclick="generateDebate()">Send</button>
     </header>
 
-    <!-- AI Debate Chatbot -->
-    <section id="chatbot">
-        <h2>🤖 AI Debate Chatbot</h2>
-        <p>Enter a debate topic, and I'll generate arguments and counterarguments.</p>
-        <input type="text" id="userInput" placeholder="Enter a topic...">
-        <button onclick="getDebate()">Send</button>
-        <p id="response"></p>
-    </section>
-
-    <!-- Debate Tips -->
-    <section id="debate-tips">
-        <h2>🔥 Advanced Debate Tips</h2>
-        <p>Master debating with these expert strategies!</p>
-        <ul>
-            <li>📌 **The Power of Rebuttals** → Don't just state your argument, dismantle your opponent’s point.</li>
-            <li>🗣️ **Body Language Matters** → Confidence shows through your gestures and voice tone.</li>
-            <li>🧐 **Use Evidence & Statistics** → A strong claim is supported by solid proof.</li>
-            <li>💡 **The Persuasion Triangle** → Logic (logos) + Emotion (pathos) + Credibility (ethos).</li>
-        </ul>
-    </section>
-
-    <!-- Sample Debates with Arguments -->
     <section id="sample-debates">
-        <h2>📚 Sample Debate Topics & Arguments</h2>
+        <h2>📚 Sample Debate Topics</h2>
         <ul>
-            <li><strong>Should school uniforms be mandatory?</strong>
-                <br>✅ Yes: Reduces peer pressure & promotes equality.
-                <br>❌ No: Limits freedom of expression.
-            </li>
-            <li><strong>Is AI a danger to human jobs?</strong>
-                <br>✅ Yes: It replaces workers in many industries.
-                <br>❌ No: It creates new tech-driven jobs.
-            </li>
+            <li><a href="school-uniforms.html">🎓 Should School Uniforms Be Mandatory?</a></li>
+            <li><a href="ai-jobs.html">🤖 Is AI a Danger to Human Jobs?</a></li>
+            <li><a href="homework.html">📚 Should Homework Be Banned?</a></li>
         </ul>
     </section>
 
-    <!-- Debate Essays -->
-    <section id="debate-essays">
-        <h2>📖 Sample Debate Essays</h2>
-        <p><strong>📜 Should Social Media Be Banned for Kids Under 13?</strong></p>
-        <p>Social media has changed the way we interact, but should children under 13 have access to it? Some argue that social media can be educational and allow kids to express themselves. However, studies show that excessive social media use can harm mental health and expose children to cyberbullying...</p>
+    <section id="debate-tips">
+        <h2>🔥 Essential Debate Tips</h2>
+        <ul>
+            <li onclick="toggleTip('tip1')">📌 **The Power of Rebuttals**</li>
+            <p id="tip1" style="display:none;">A strong rebuttal can destroy your opponent’s argument. Always listen carefully and **find weaknesses** in their logic.</p>
+
+            <li onclick="toggleTip('tip2')">🗣️ **Body Language Matters**</li>
+            <p id="tip2" style="display:none;">Confident body language makes you look more convincing. Stand up straight, **make eye contact**, and use hand gestures.</p>
+
+            <li onclick="toggleTip('tip3')">🧐 **Use Evidence & Statistics**</li>
+            <p id="tip3" style="display:none;">Back up your claims with real data! Statistics make your argument stronger and more reliable.</p>
+        </ul>
     </section>
 
-    <!-- Fun Facts -->
     <section id="fun-facts">
         <h2>🎉 Fun Debate Facts!</h2>
         <ul>
             <li>🗣️ The first debates were held in **Ancient Greece**, over 2,400 years ago!</li>
             <li>🏆 Many famous world leaders started as **debate champions**.</li>
+            <li>🎤 Some professional debaters **earn money** by competing in tournaments.</li>
+            <li>⚖️ The **Lincoln-Douglas debates (1858)** were so famous that they are still studied today!</li>
         </ul>
     </section>
 
-    <!-- XP Rewards -->
     <section id="xp-rewards">
-        <h2>🎮 XP & Rewards System</h2>
-        <p>Earn XP every time you use the AI Debate Assistant! 🎉</p>
-        <p><strong>Your XP:</strong> <span id="xp-count">0</span></p>
-        <button onclick="earnXP()">Earn XP!</button>
+        <h2>🏆 XP & Rewards</h2>
+        <p>Your XP: <span id="xpCount">0</span></p>
     </section>
-
-    <footer>
-        <p>Made with ❤️ for future debate champions!</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
