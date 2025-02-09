@@ -8,49 +8,50 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+
     <header>
-        <h1>🎤 AI Debate Assistant</h1>
-        <p>Enter a debate topic, and I'll generate arguments and counterarguments.</p>
-        <input type="text" id="debateTopic" placeholder="Enter a debate topic">
-        <button onclick="generateDebate()">Send</button>
+        <h1>🎤 AI Debate Assistant 🎤</h1>
+        <p>Welcome to your interactive debate preparation tool!</p>
     </header>
 
-    <section id="sample-debates">
+    <section>
+        <h2>🔍 Enter a Debate Topic</h2>
+        <p>Type your debate topic below and get arguments & counterarguments.</p>
+        <input type="text" id="debateInput" placeholder="E.g., Should school uniforms be mandatory?">
+        <button onclick="generateDebate()">Send</button>
+        <p id="debateOutput"></p>
+    </section>
+
+    <section>
+        <h2>🏆 XP & Rewards</h2>
+        <p>Your XP: <span id="xpCounter">0</span></p>
+        <button onclick="earnXP()">Earn XP</button>
+    </section>
+
+    <section>
         <h2>📚 Sample Debate Topics</h2>
         <ul>
-            <li><a href="school-uniforms.html">🎓 Should School Uniforms Be Mandatory?</a></li>
-            <li><a href="ai-jobs.html">🤖 Is AI a Danger to Human Jobs?</a></li>
-            <li><a href="homework.html">📚 Should Homework Be Banned?</a></li>
+            <li><a href="school-uniforms.html">Should school uniforms be mandatory?</a></li>
+            <li><a href="ai-jobs.html">Will AI take over jobs?</a></li>
+            <li><a href="homework.html">Is homework necessary for learning?</a></li>
         </ul>
     </section>
 
-    <section id="debate-tips">
-        <h2>🔥 Essential Debate Tips</h2>
+    <section>
+        <h2>📖 Debate Tips</h2>
         <ul>
-            <li onclick="toggleTip('tip1')">📌 **The Power of Rebuttals**</li>
-            <p id="tip1" style="display:none;">A strong rebuttal can destroy your opponent’s argument. Always listen carefully and **find weaknesses** in their logic.</p>
-
-            <li onclick="toggleTip('tip2')">🗣️ **Body Language Matters**</li>
-            <p id="tip2" style="display:none;">Confident body language makes you look more convincing. Stand up straight, **make eye contact**, and use hand gestures.</p>
-
-            <li onclick="toggleTip('tip3')">🧐 **Use Evidence & Statistics**</li>
-            <p id="tip3" style="display:none;">Back up your claims with real data! Statistics make your argument stronger and more reliable.</p>
+            <li><a href="debate-tip-1.html">Structure Your Argument</a></li>
+            <li><a href="debate-tip-2.html">Use Strong Evidence</a></li>
+            <li><a href="debate-tip-3.html">Speak Clearly & Confidently</a></li>
+            <li><a href="debate-tip-4.html">Listen to Your Opponent</a></li>
+            <li><a href="debate-tip-5.html">Control Your Body Language</a></li>
         </ul>
     </section>
 
-    <section id="fun-facts">
-        <h2>🎉 Fun Debate Facts!</h2>
-        <ul>
-            <li>🗣️ The first debates were held in **Ancient Greece**, over 2,400 years ago!</li>
-            <li>🏆 Many famous world leaders started as **debate champions**.</li>
-            <li>🎤 Some professional debaters **earn money** by competing in tournaments.</li>
-            <li>⚖️ The **Lincoln-Douglas debates (1858)** were so famous that they are still studied today!</li>
-        </ul>
+    <section>
+        <h2>🎉 Fun Debate Facts</h2>
+        <a href="debate-facts.html">Click here to see fun facts about debating!</a>
     </section>
 
-    <section id="xp-rewards">
-        <h2>🏆 XP & Rewards</h2>
-        <p>Your XP: <span id="xpCount">0</span></p>
-    </section>
 </body>
 </html>
