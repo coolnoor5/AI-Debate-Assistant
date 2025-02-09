@@ -25,10 +25,10 @@ function getDebateArguments(topic) {
             <div class="bubble">🔴 Con: Uniforms limit student expression and individuality.</div>
             <div class="bubble">⚖️ Counter-Argument: While uniforms limit creativity, they help students focus on learning.</div>
         `,
-        "social-media": `
-            <div class="bubble">🟢 Pro: Protects kids from harmful content.</div>
-            <div class="bubble">🔴 Con: Limits freedom of expression.</div>
-            <div class="bubble">⚖️ Counter-Argument: Instead of bans, parents should guide responsible usage.</div>
+        "climate-change": `
+            <div class="bubble">🟢 Pro: Climate change is the biggest crisis today due to rising sea levels and extreme weather.</div>
+            <div class="bubble">🔴 Con: Some argue that economic stability should be prioritized over climate policies.</div>
+            <div class="bubble">⚖️ Counter-Argument: Ignoring climate change will lead to more economic disasters in the future.</div>
         `,
     };
     
