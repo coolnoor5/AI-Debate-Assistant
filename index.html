@@ -4,59 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Debate Assistant</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🎙️ AI Debate Assistant</h1>
-        <p>Ask a debate question and receive a full AI-generated debate!</p>
+        <h1>🎤 AI Debate Assistant</h1>
+        <p>Welcome to the ultimate debate training hub! Earn XP, learn debate skills, and get AI-generated arguments.</p>
 
-        <input type="text" id="debate-topic" placeholder="Enter a debate topic...">
-        <button id="submit-btn">Generate Debate</button>
-        <p id="error-message" class="error"></p>
-
-        <div class="response">
-            <h2>💡 AI-Generated Debate</h2>
-            <div id="debate-response"></div>
+        <div class="xp-bar">
+            <p>🎖 XP: <span id="xp">0</span></p>
+            <progress id="xp-progress" value="0" max="100"></progress>
         </div>
 
-        <section>
-            <h2>🏆 XP & Rewards</h2>
-            <p>Your XP: <span id="xp-count">0</span></p>
-        </section>
+        <textarea id="debateInput" placeholder="Enter a debate topic..."></textarea>
+        <button onclick="getDebateResponse()">Get AI Debate Arguments</button>
+        
+        <div id="debateResponse"></div>
 
-        <section>
-            <h2>🎤 Sample Debate Topics</h2>
-            <ul id="sample-topics">
-                <li>Should school uniforms be mandatory?</li>
-                <li>Should social media have age restrictions?</li>
-                <li>Is AI taking over human jobs?</li>
-                <li>Should homework be banned?</li>
-                <li>Is online learning better than in-person learning?</li>
-                <li>Should animal testing be banned?</li>
-            </ul>
-        </section>
+        <h2>🔥 Sample Debate Topics</h2>
+        <ul id="debateTopics">
+            <li>📌 Should social media be banned for minors?</li>
+            <li>📌 Is AI a threat to jobs?</li>
+            <li>📌 Should schools remove homework?</li>
+        </ul>
 
-        <section>
-            <h2>🧠 Fun Facts About Debating</h2>
-            <ul id="debate-facts">
-                <li>🗣️ Debating improves critical thinking and speaking skills.</li>
-                <li>🏛️ The world's first recorded debate was in ancient Greece.</li>
-                <li>📚 Many famous leaders were debaters in school!</li>
-            </ul>
-        </section>
+        <h2>📝 Debate Strategies</h2>
+        <ul>
+            <li>✔️ Always back up arguments with evidence.</li>
+            <li>✔️ Anticipate counterarguments and refute them.</li>
+            <li>✔️ Use rhetorical devices like repetition and anecdotes.</li>
+        </ul>
 
-        <section>
-            <h2>📢 Debate Tips</h2>
-            <ul id="debate-tips">
-                <li>🔹 Always research both sides of the argument.</li>
-                <li>🔹 Use facts, not emotions, to support your points.</li>
-                <li>🔹 Speak clearly and confidently.</li>
-                <li>🔹 Respect your opponent's arguments.</li>
-            </ul>
-        </section>
+        <p>💡 Fun Fact: The longest debate in history lasted **36 hours**!</p>
+
+        <script src="script.js"></script>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
