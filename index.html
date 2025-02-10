@@ -14,15 +14,15 @@
     <div class="section">
         <h2>💡 Select a Debate Topic:</h2>
         <select id="debateTopic">
-            <option value="school_uniforms">Should school uniforms be mandatory?</option>
-            <option value="social_media">Should social media have age restrictions?</option>
-            <option value="ai_jobs">Is AI taking over human jobs?</option>
-            <option value="gun_control">Should stricter gun control laws be implemented?</option>
-            <option value="climate_change">Is climate change the biggest global threat?</option>
-            <option value="free_education">Should university education be free for all?</option>
-            <option value="space_exploration">Should governments fund space exploration?</option>
-            <option value="animal_testing">Is animal testing justified?</option>
-        </select>
+    <option value="school_uniforms">Should school uniforms be mandatory?</option>
+    <option value="social_media">Should social media have age restrictions?</option>
+    <option value="ai_jobs">Is AI taking over human jobs?</option>
+    <option value="gun_control">Should stricter gun control laws be implemented?</option>
+    <option value="climate_change">Is climate change the biggest global threat?</option>
+    <option value="free_education">Should university education be free for all?</option>
+    <option value="space_exploration">Should governments fund space exploration?</option>
+    <option value="animal_testing">Is animal testing justified?</option>
+</select>
         <button id="generateDebate">Generate Full Debate</button>
         <div id="debateOutput" class="section"></div>
     </div>
@@ -57,9 +57,9 @@
     </div>
 
     <!-- Beginner's Guide -->
-    <div class="section expandable" onclick="toggleSection('beginnersGuide')">
-        📖 Beginner’s Guide to Debating ▼
-    </div>
+    <div class="section expandable" data-target="beginnersGuide">
+    📖 Beginner’s Guide to Debating ▼
+</div>
     <div id="beginnersGuide" class="hidden-content">
         <h3>🌟 The Basics of Debating</h3>
         <p>Debating is the art of arguing a point with logic, evidence, and persuasion. The key elements of a debate include:</p>
