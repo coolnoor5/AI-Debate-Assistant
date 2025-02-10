@@ -27,86 +27,79 @@
         <div id="debateOutput" class="section"></div>
     </div>
 
-    <!-- XP System -->
+    <!-- XP System & Leaderboard -->
     <div class="section xp-box">
         🏆 XP & Rewards <br>
-        Your XP: <span id="xpCounter">0</span>
+        Your XP: <span id="xpCounter">0</span> | Level: <span id="level">1</span>
     </div>
 
-    <!-- Expandable Sections -->
-    <div class="section expandable" onclick="toggleSection('debateTips')">
-        📢 Debate Tips (Click to Expand) ▼
-    </div>
-    <div id="debateTips" class="hidden-content">
-        <ul>
-            <li>🔹 Structure your speech with an introduction, main points, and a conclusion.</li>
-            <li>🔹 Always have **evidence** to support your argument.</li>
-            <li>🔹 Use rhetorical questions to engage your audience.</li>
-            <li>🔹 Counterarguments make your case stronger.</li>
-            <li>🔹 Control your voice—speak clearly and confidently.</li>
-        </ul>
+    <!-- Debate Simulator -->
+    <div class="section">
+        <h2>🤖 Live Debate Simulator</h2>
+        <p>Pick a side and debate with the AI!</p>
+        <button onclick="startDebate('pro')">Argue FOR</button>
+        <button onclick="startDebate('con')">Argue AGAINST</button>
+        <div id="debateSimulation" class="section"></div>
     </div>
 
-    <div class="section expandable" onclick="toggleSection('beginnerGuide')">
-        📘 Beginner's Guide to Debating (Click to Expand) ▼
+    <!-- Debate Techniques -->
+    <div class="section expandable" onclick="toggleSection('advancedTechniques')">
+        🎭 Advanced Debate Techniques ▼
     </div>
-    <div id="beginnerGuide" class="hidden-content">
-        <h3>What is Debating?</h3>
-        <p>Debating is a structured argument where two opposing sides present their viewpoints on a topic.</p>
-        <h3>Basic Structure of a Debate</h3>
-        <p>1. **Opening Statement** - Introduce your stance.<br>
-           2. **Main Arguments** - Present 2-3 strong points with evidence.<br>
-           3. **Rebuttals** - Counter your opponent’s arguments.<br>
-           4. **Closing Statement** - Summarize and emphasize your strongest points.</p>
-        <h3>How to Become a Strong Debater</h3>
-        <ul>
-            <li>🔹 Research both sides of every debate topic.</li>
-            <li>🔹 Learn public speaking skills.</li>
-            <li>🔹 Practice with mock debates.</li>
-        </ul>
+    <div id="advancedTechniques" class="hidden-content">
+        <p>📝 **The Rule of Three** - Make three strong points to reinforce your argument.</p>
+        <p>🔄 **Framing Your Opponent’s Argument** - Reword their argument in a way that weakens it.</p>
+        <p>🛑 **Strategic Pauses** - Use silence to make your point more powerful.</p>
     </div>
 
-    <div class="section expandable" onclick="toggleSection('funFacts')">
-        🧠 Fun Debate Facts ▼
-    </div>
-    <div id="funFacts" class="hidden-content">
-        <ul>
-            <li>🗣️ The world's longest debate lasted **58 hours**!</li>
-            <li>📜 Ancient Greece was the birthplace of formal debating.</li>
-            <li>🎤 The first televised debate was in **1960**, between JFK and Nixon.</li>
-            <li>🧠 Debating enhances **critical thinking skills**.</li>
-            <li>🏆 The UAE hosts **the annual National Debate Championship**.</li>
-        </ul>
-    </div>
-
-    <div class="section expandable" onclick="toggleSection('teachersSection')">
-        👩‍🏫 Teachers' Corner ▼
-    </div>
-    <div id="teachersSection" class="hidden-content">
-        <h3>📖 Study Guide for Teaching Debate</h3>
-        <ul>
-            <li>📌 **Week 1:** Introduction to Debating</li>
-            <li>📌 **Week 2:** How to Build Strong Arguments</li>
-            <li>📌 **Week 3:** Countering Opponents & Logical Fallacies</li>
-            <li>📌 **Week 4:** Public Speaking & Persuasion</li>
-            <li>📌 **Week 5:** Competitive Debating Techniques</li>
-            <li>📌 **Week 6:** Running a Full Classroom Debate</li>
-        </ul>
-    </div>
-
+    <!-- UAE & Debate -->
     <div class="section expandable" onclick="toggleSection('uaeDebate')">
-        🇦🇪 Debate & The UAE ▼
+        🇦🇪 Debate & The UAE - A Research Article ▼
     </div>
     <div id="uaeDebate" class="hidden-content">
-        <p>The UAE encourages debating through various initiatives:</p>
-        <ul>
-            <li>🏆 **The National Debate Championship** - Annual competition for students.</li>
-            <li>🌍 **Model United Nations (MUN)** - Debating on international topics.</li>
-            <li>📖 **Debating in Schools** - Supported by the UAE Ministry of Education.</li>
-            <li>🎤 **Public Speaking Competitions** - Encouraging confident speakers.</li>
-            <li>🌏 **Linked to SDG 4 (Quality Education)** - Debate programs enhance critical thinking.</li>
-            <li>🏗 **Linked to SDG 9 (Innovation & Infrastructure)** - Encourages innovation in education.</li>
-        </ul>
+        <h3>📝 The Rise of Debate Culture in the UAE</h3>
+        <p>The UAE has recognized the importance of debating in education. Programs like **Model United Nations (MUN)** and the **UAE National Debate Championship** have become major platforms for students.</p>
+        <p>💡 **Why is debating important in the UAE?**  
+        - **Encourages critical thinking** for global issues.  
+        - **Prepares students for leadership roles** in international politics and business.  
+        - **Supports SDG 4 (Quality Education)** and SDG 9 (Innovation & Infrastructure).</p>
+        <p>🎤 **Major Debate Competitions in the UAE:**  
+        - 🇦🇪 *National Schools Debate Championship*  
+        - 🌍 *Dubai Model United Nations (DUBAI MUN)*  
+        - 🏆 *Global Millennium Debate Tournament*  
+        </p>
+    </div>
+
+    <!-- The Psychology of Debating -->
+    <div class="section expandable" onclick="toggleSection('debatePsychology')">
+        🧠 The Psychology of Debating ▼
+    </div>
+    <div id="debatePsychology" class="hidden-content">
+        <h3>🧠 How Persuasion Works in Debates</h3>
+        <p>💡 **The Power of Emotional Appeals**  
+        People are more likely to be convinced by arguments that make them feel something rather than just logic alone.</p>
+        <p>💡 **The Confidence Bias**  
+        If you sound sure of yourself, people will believe you—even if you are wrong!</p>
+    </div>
+
+    <!-- Public Speaking Guide -->
+    <div class="section expandable" onclick="toggleSection('publicSpeaking')">
+        🎤 Mastering Public Speaking ▼
+    </div>
+    <div id="publicSpeaking" class="hidden-content">
+        <h3>🎤 How to Speak Like a Pro</h3>
+        <p>💡 **Tips for Powerful Public Speaking**  
+        - Maintain **eye contact** to build a connection with the audience.  
+        - Use **gestures and body language** to emphasize your points.  
+        - **Slow down your speech** for dramatic effect.  
+        - Avoid **filler words** like “uh” and “um” to sound more confident.</p>
+    </div>
+
+    <!-- Debate Challenge -->
+    <div class="section">
+        <h2>🎯 Random Debate Challenge</h2>
+        <button onclick="generateChallenge()">Get a Random Debate Topic</button>
+        <p id="challengeOutput"></p>
     </div>
 
     <script src="script.js"></script>
