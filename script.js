@@ -10,11 +10,10 @@ function addXP() {
         document.getElementById("level").innerText = level;
     }
 }
-
 // Click-to-Expand Functionality
 function toggleSection(sectionId) {
     let section = document.getElementById(sectionId);
-    section.style.display = section.style.display === "none" ? "block" : "none";
+    section.style.display = section.style.display === "none" || section.style.display === "" ? "block" : "none";
 }
 
 // Full Debate Data (Automatically Generated Pros, Cons, Arguments, Counterargument
