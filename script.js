@@ -492,3 +492,22 @@ document.querySelectorAll(".debateOption").forEach(button => {
         startDebate(topic);
     });
 });
+// Random Debate Topic Generator
+function generateChallenge() {
+    let topics = [
+        "Should school uniforms be mandatory?",
+        "Is AI taking over human jobs?",
+        "Should social media have age restrictions?",
+        "Should stricter gun control laws be implemented?",
+        "Is climate change the biggest global threat?",
+        "Should university education be free for all?",
+        "Should governments fund space exploration?",
+        "Is animal testing justified?"
+    ];
+
+    // Select a random topic
+    let randomTopic = topics[Math.floor(Math.random() * topics.length)];
+
+    // Display the random topic in the output area
+    document.getElementById("challengeOutput").innerText = `🗣️ Debate Topic: ${randomTopic}`;
+}
