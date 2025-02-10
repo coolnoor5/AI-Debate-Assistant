@@ -33,73 +33,75 @@
         Your XP: <span id="xpCounter">0</span> | Level: <span id="level">1</span>
     </div>
 
-    <!-- Debate Simulator -->
+    <!-- Live Debate Simulator -->
     <div class="section">
         <h2>🤖 Live Debate Simulator</h2>
-        <p>Pick a side and debate with the AI!</p>
-        <button onclick="startDebate('pro')">Argue FOR</button>
-        <button onclick="startDebate('con')">Argue AGAINST</button>
+        <p>Choose a topic and argue against the AI!</p>
+        <select id="liveDebateTopic">
+            <option value="school_uniforms">School Uniforms</option>
+            <option value="ai_jobs">AI Taking Over Jobs</option>
+            <option value="free_education">Free University Education</option>
+            <option value="climate_change">Climate Change</option>
+        </select>
+        <button onclick="startDebate(document.getElementById('liveDebateTopic').value)">Start Debate</button>
         <div id="debateSimulation" class="section"></div>
     </div>
 
-    <!-- Debate Techniques -->
-    <div class="section expandable" onclick="toggleSection('advancedTechniques')">
-        🎭 Advanced Debate Techniques ▼
-    </div>
-    <div id="advancedTechniques" class="hidden-content">
-        <p>📝 **The Rule of Three** - Make three strong points to reinforce your argument.</p>
-        <p>🔄 **Framing Your Opponent’s Argument** - Reword their argument in a way that weakens it.</p>
-        <p>🛑 **Strategic Pauses** - Use silence to make your point more powerful.</p>
-    </div>
-
-    <!-- UAE & Debate -->
-    <div class="section expandable" onclick="toggleSection('uaeDebate')">
-        🇦🇪 Debate & The UAE - A Research Article ▼
-    </div>
-    <div id="uaeDebate" class="hidden-content">
-        <h3>📝 The Rise of Debate Culture in the UAE</h3>
-        <p>The UAE has recognized the importance of debating in education. Programs like **Model United Nations (MUN)** and the **UAE National Debate Championship** have become major platforms for students.</p>
-        <p>💡 **Why is debating important in the UAE?**  
-        - **Encourages critical thinking** for global issues.  
-        - **Prepares students for leadership roles** in international politics and business.  
-        - **Supports SDG 4 (Quality Education)** and SDG 9 (Innovation & Infrastructure).</p>
-        <p>🎤 **Major Debate Competitions in the UAE:**  
-        - 🇦🇪 *National Schools Debate Championship*  
-        - 🌍 *Dubai Model United Nations (DUBAI MUN)*  
-        - 🏆 *Global Millennium Debate Tournament*  
-        </p>
-    </div>
-
-    <!-- The Psychology of Debating -->
-    <div class="section expandable" onclick="toggleSection('debatePsychology')">
-        🧠 The Psychology of Debating ▼
-    </div>
-    <div id="debatePsychology" class="hidden-content">
-        <h3>🧠 How Persuasion Works in Debates</h3>
-        <p>💡 **The Power of Emotional Appeals**  
-        People are more likely to be convinced by arguments that make them feel something rather than just logic alone.</p>
-        <p>💡 **The Confidence Bias**  
-        If you sound sure of yourself, people will believe you—even if you are wrong!</p>
-    </div>
-
-    <!-- Public Speaking Guide -->
-    <div class="section expandable" onclick="toggleSection('publicSpeaking')">
-        🎤 Mastering Public Speaking ▼
-    </div>
-    <div id="publicSpeaking" class="hidden-content">
-        <h3>🎤 How to Speak Like a Pro</h3>
-        <p>💡 **Tips for Powerful Public Speaking**  
-        - Maintain **eye contact** to build a connection with the audience.  
-        - Use **gestures and body language** to emphasize your points.  
-        - **Slow down your speech** for dramatic effect.  
-        - Avoid **filler words** like “uh” and “um” to sound more confident.</p>
-    </div>
-
-    <!-- Debate Challenge -->
+    <!-- Random Debate Challenge -->
     <div class="section">
         <h2>🎯 Random Debate Challenge</h2>
         <button onclick="generateChallenge()">Get a Random Debate Topic</button>
         <p id="challengeOutput"></p>
+    </div>
+
+    <!-- Beginner's Guide -->
+    <div class="section expandable" onclick="toggleSection('beginnersGuide')">
+        📖 Beginner’s Guide to Debating ▼
+    </div>
+    <div id="beginnersGuide" class="hidden-content">
+        <h3>🌟 The Basics of Debating</h3>
+        <p>Debating is the art of arguing a point with logic, evidence, and persuasion. The key elements of a debate include:</p>
+        <ul>
+            <li>🗣️ **A Strong Opening Statement** - A clear introduction to your stance.</li>
+            <li>📚 **Supporting Evidence** - Facts, statistics, and expert opinions.</li>
+            <li>🔄 **Counterarguments** - Addressing and disproving opposing views.</li>
+            <li>🎤 **Delivery & Confidence** - Speaking persuasively and maintaining eye contact.</li>
+        </ul>
+    </div>
+
+    <!-- Debate Tips -->
+    <div class="section expandable" onclick="toggleSection('debateTips')">
+        📢 Essential Debate Tips ▼
+    </div>
+    <div id="debateTips" class="hidden-content">
+        <ul>
+            <li>🔹 Structure your speech with an introduction, main points, and a conclusion.</li>
+            <li>🔹 Always have **evidence** to support your argument.</li>
+            <li>🔹 Use rhetorical questions to engage your audience.</li>
+            <li>🔹 Never personally attack your opponent; focus on the argument.</li>
+            <li>🔹 Maintain eye contact and speak with confidence.</li>
+        </ul>
+    </div>
+
+    <!-- UAE & Debate Section -->
+    <div class="section expandable" onclick="toggleSection('uaeDebate')">
+        🇦🇪 Debate & The UAE - How it Links to SDG9 & SDG4 ▼
+    </div>
+    <div id="uaeDebate" class="hidden-content">
+        <h3>🏆 The UAE’s Commitment to Debating & Education</h3>
+        <p>The UAE has invested heavily in education and innovation. Debating is a key tool in preparing future leaders.</p>
+
+        <h4>📚 How This Supports SDG 4 (Quality Education)</h4>
+        <p>Debating teaches **critical thinking, communication, and problem-solving**, aligning with **SDG 4: Ensure inclusive and equitable quality education for all.**</p>
+        <p>💡 **Examples:**  
+        - The UAE hosts international debating competitions to promote global awareness.  
+        - Schools include debating in their curriculum to develop well-rounded students.</p>
+
+        <h4>🚀 How This Supports SDG 9 (Innovation & Infrastructure)</h4>
+        <p>Debating helps drive **new ideas and technological progress**, aligning with **SDG 9: Build resilient infrastructure, promote sustainable industrialization, and foster innovation.**</p>
+        <p>💡 **Examples:**  
+        - The UAE’s space program debates policy and ethics of Mars colonization.  
+        - AI-driven debate analysis tools are being tested in education.</p>
     </div>
 
     <script src="script.js"></script>
