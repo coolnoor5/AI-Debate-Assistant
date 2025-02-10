@@ -1,9 +1,14 @@
-// XP System
+// XP & Level System
 let xp = 0;
+let level = 1;
 
 function addXP() {
     xp += 10;
     document.getElementById("xpCounter").innerText = xp;
+    if (xp % 50 === 0) {
+        level++;
+        document.getElementById("level").innerText = level;
+    }
 }
 
 // Click-to-Expand Functionality
@@ -12,17 +17,17 @@ function toggleSection(sectionId) {
     section.style.display = section.style.display === "none" ? "block" : "none";
 }
 
-// Massive Debate Data
+// Full Debate Data
 const debates = {
     "school_uniforms": {
-        pros: ["Creates equality among students", "Reduces peer pressure", /* ADD 18 MORE PROS HERE */],
-        cons: ["Limits self-expression", "Can be expensive for families", /* ADD 18 MORE CONS HERE */],
+        pros: ["Creates equality among students", "Reduces peer pressure", /* ADD 18 MORE PROS */],
+        cons: ["Limits self-expression", "Can be expensive for families", /* ADD 18 MORE CONS */],
         arguments: ["Uniforms improve student focus and reduce distractions.", /* ADD 9 MORE ARGUMENTS */],
         counterArguments: ["Uniforms do not impact students’ focus in the long term.", /* ADD 9 MORE COUNTERARGUMENTS */]
     },
     "social_media": {
-        pros: ["Encourages global communication", "Allows for educational content sharing", /* ADD 18 MORE PROS HERE */],
-        cons: ["Leads to cyberbullying", "Can be addictive", /* ADD 18 MORE CONS HERE */],
+        pros: ["Encourages global communication", "Allows for educational content sharing", /* ADD 18 MORE PROS */],
+        cons: ["Leads to cyberbullying", "Can be addictive", /* ADD 18 MORE CONS */],
         arguments: ["Social media enhances learning and communication.", /* ADD 9 MORE ARGUMENTS */],
         counterArguments: ["Proper education on digital safety is a better solution.", /* ADD 9 MORE COUNTERARGUMENTS */]
     },
@@ -73,64 +78,34 @@ const debates = {
         ]
     },
     "gun_control": {
-        pros: [
-            "Reduces gun-related crimes", "Lowers homicide rates", "Prevents mass shootings",
-            "Stronger background checks prevent weapons falling into wrong hands",
-            "Decreases accidental firearm deaths", "Reduces suicide rates involving guns",
-            "Increases public safety", "Stricter laws lead to fewer illegal gun sales",
-            "Encourages responsible gun ownership", "Lessens gang-related gun violence",
-            "Prevents untrained individuals from handling firearms",
-            "Promotes peaceful conflict resolution", "Limits access to assault weapons",
-            "Stronger gun laws correlate with lower violent crime rates",
-            "Reduces gun thefts and illegal resales", "Protects law enforcement officers",
-            "Prevents domestic violence incidents from escalating into fatalities",
-            "Supports initiatives to decrease firearm accessibility for criminals",
-            "Improves national security", "Encourages use of alternative self-defense tools"
-        ],
-        cons: [
-            "Violates the right to bear arms", "Reduces personal protection ability",
-            "Gun bans do not stop criminals from obtaining weapons",
-            "Gun ownership deters crime", "May lead to black market firearm sales",
-            "Strict laws do not necessarily reduce gun-related deaths",
-            "Limits personal freedom and self-defense rights",
-            "Takes away sport shooting opportunities",
-            "Some gun laws disproportionately affect law-abiding citizens",
-            "Self-defense is harder without firearm access",
-            "Restricts rural citizens who rely on guns for protection",
-            "Reduces citizens’ ability to resist government tyranny",
-            "Gun-free zones attract criminals",
-            "Background checks can be invasive to personal privacy",
-            "Gun laws do not address root causes of violence",
-            "Criminals will always find ways to access firearms",
-            "Gun control does not prevent knife or other weapon-related crimes",
-            "Firearm bans do not stop gang-related activities",
-            "Law enforcement may struggle to enforce gun restrictions",
-            "Banning guns gives more power to criminals with illegal weapons"
-        ],
-        arguments: [
-            "Stricter gun laws have been shown to reduce homicide rates.",
-            "Gun control laws prevent access to weapons by dangerous individuals.",
-            "A decrease in gun availability leads to a decrease in mass shootings.",
-            "Background checks help keep guns away from criminals.",
-            "Gun control increases overall public safety.",
-            "Countries with strict gun laws report fewer gun-related deaths.",
-            "Firearm restrictions prevent unqualified individuals from handling weapons.",
-            "Reducing access to guns leads to lower suicide rates.",
-            "Stronger gun laws support responsible gun ownership.",
-            "Limiting access to high-capacity weapons reduces fatality risks."
-        ],
-        counterArguments: [
-            "Gun bans infringe on personal rights and self-defense.",
-            "Criminals will still find ways to obtain firearms illegally.",
-            "Law-abiding citizens should not be punished for others' actions.",
-            "Gun control does not reduce overall violence.",
-            "Other weapons can still be used in violent crimes.",
-            "Stricter laws could lead to an increase in illegal firearm trade.",
-            "Personal safety should not depend on government regulations.",
-            "Self-defense situations require quick firearm access.",
-            "Gun bans disproportionately affect citizens in high-crime areas.",
-            "Gun-free zones do not prevent crime; they invite criminals."
-        ]
+        pros: ["Reduces gun-related crimes", "Lowers homicide rates", /* ADD 18 MORE PROS */],
+        cons: ["Violates the right to bear arms", "Reduces personal protection ability", /* ADD 18 MORE CONS */],
+        arguments: ["Stricter gun laws reduce homicide rates.", /* ADD 9 MORE ARGUMENTS */],
+        counterArguments: ["Gun bans infringe on personal rights and self-defense.", /* ADD 9 MORE COUNTERARGUMENTS */]
+    },
+    "climate_change": {
+        pros: ["Protects the environment", "Reduces global warming", /* ADD 18 MORE PROS */],
+        cons: ["Expensive to implement", "Hurts industries like oil and coal", /* ADD 18 MORE CONS */],
+        arguments: ["Climate action is needed to prevent global catastrophes.", /* ADD 9 MORE ARGUMENTS */],
+        counterArguments: ["Climate change policies harm economies and jobs.", /* ADD 9 MORE COUNTERARGUMENTS */]
+    },
+    "free_education": {
+        pros: ["Makes education accessible to all", "Reduces student debt", /* ADD 18 MORE PROS */],
+        cons: ["Increases government spending", "May lower the quality of education", /* ADD 18 MORE CONS */],
+        arguments: ["Free education leads to a more educated society.", /* ADD 9 MORE ARGUMENTS */],
+        counterArguments: ["Government-funded education strains taxpayers.", /* ADD 9 MORE COUNTERARGUMENTS */]
+    },
+    "space_exploration": {
+        pros: ["Encourages scientific advancements", "Can find new resources", /* ADD 18 MORE PROS */],
+        cons: ["Extremely expensive", "Funds could be used for Earth’s problems", /* ADD 18 MORE CONS */],
+        arguments: ["Space exploration is vital for human survival.", /* ADD 9 MORE ARGUMENTS */],
+        counterArguments: ["We should focus on solving Earth’s problems first.", /* ADD 9 MORE COUNTERARGUMENTS */]
+    },
+    "animal_testing": {
+        pros: ["Helps medical research", "Saves human lives", /* ADD 18 MORE PROS */],
+        cons: ["Cruel and inhumane", "Not always accurate", /* ADD 18 MORE CONS */],
+        arguments: ["Animal testing has led to major medical breakthroughs.", /* ADD 9 MORE ARGUMENTS */],
+        counterArguments: ["Alternatives exist that don’t harm animals.", /* ADD 9 MORE COUNTERARGUMENTS */]
     }
 };
 
