@@ -65,36 +65,48 @@ select {
     background: #fffaf0;
     cursor: pointer;
     font-weight: bold;
-}
+  }  
 /* Click-to-Expand Style */
 .expandable {
-    background: linear-gradient(135deg, #ff6699, #cc66ff, #6699ff); /* Pink, Purple, Blue */
+    background: linear-gradient(135deg, #ff99cc, #cc99ff, #99ccff); /* Soft Pastel Pink, Purple, Blue */
     color: white;
-    padding: 12px;
+    padding: 15px;
     margin: 10px 0;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 30px; /* Fully rounded bubble effect */
     text-align: center;
     border: none;
     transition: 0.3s;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
 }
 
+/* Hover Effect - Darker Gradient */
 .expandable:hover {
-    background: linear-gradient(135deg, #ff3366, #9933ff, #3366ff); /* Darker shades on hover */
+    background: linear-gradient(135deg, #ff6699, #9966ff, #6699ff); /* Slightly darker shades */
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Hidden Content Background */
+/* Hidden Content (Inside Bubbles) */
 .hidden-content {
     display: none;
     background: white;
-    padding: 15px;
+    padding: 20px;
     margin: 10px 0;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px; /* Rounded inner content */
+    border: 2px solid #ff99cc; /* Soft border matching bubble color */
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Bubble Animation */
+@keyframes pop {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.hidden-content.show {
+    animation: pop 0.3s ease-in-out;
+}
 
 /* XP System */
 .xp-box {
