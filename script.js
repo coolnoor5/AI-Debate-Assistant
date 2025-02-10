@@ -369,7 +369,70 @@ const liveDebateTopics = {
             { ai: "Fossil fuels are still important for economic stability. Do you agree?", options: ["Yes, they support economic growth.", "No, they harm the environment too much."], correct: "Yes, they support economic growth." },
             { ai: "Are climate policies more harmful than helpful?", options: ["Yes, they limit economic progress.", "No, saving the planet is more important."], correct: "Yes, they limit economic progress." }
         ]
-    }
+    },
+    "gun_control": {
+        question: "Should stricter gun control laws be implemented?",
+        for: [
+            { ai: "Stricter gun laws reduce crime rates. What do you think?", options: ["Yes, gun laws prevent crime.", "No, criminals will still get guns."], correct: "Yes, gun laws prevent crime." },
+            { ai: "Background checks help prevent guns from reaching criminals. Agree?", options: ["Yes, they stop dangerous people.", "No, background checks are unnecessary."], correct: "Yes, they stop dangerous people." },
+            { ai: "Countries with strict gun laws have fewer mass shootings. Do you agree?", options: ["Yes, fewer guns mean fewer shootings.", "No, mass shootings will still happen."], correct: "Yes, fewer guns mean fewer shootings." },
+            { ai: "Gun control protects families and children. What's your opinion?", options: ["Yes, it makes society safer.", "No, self-defense is more important."], correct: "Yes, it makes society safer." },
+            { ai: "Should military-style weapons be restricted to law enforcement only?", options: ["Yes, civilians don't need them.", "No, people should have access."], correct: "Yes, civilians don't need them." }
+        ],
+        against: [
+            { ai: "Gun control restricts personal freedoms. Do you agree?", options: ["Yes, it limits rights.", "No, safety is more important."], correct: "Yes, it limits rights." },
+            { ai: "Law-abiding citizens should have the right to defend themselves. Agree?", options: ["Yes, self-defense is a right.", "No, police should handle security."], correct: "Yes, self-defense is a right." },
+            { ai: "Criminals will still find ways to get guns. Do you agree?", options: ["Yes, illegal weapons will still exist.", "No, fewer legal guns reduce crime."], correct: "Yes, illegal weapons will still exist." },
+            { ai: "More armed citizens can deter crime. What's your stance?", options: ["Yes, armed citizens prevent violence.", "No, more guns create more danger."], correct: "Yes, armed citizens prevent violence." },
+            { ai: "Gun bans may lead to increased black market activity. Do you agree?", options: ["Yes, bans push sales underground.", "No, bans reduce gun access overall."], correct: "Yes, bans push sales underground." }
+        ]
+    },
+    "space_exploration": {
+        question: "Should governments fund space exploration?",
+        for: [
+            { ai: "Space exploration expands human knowledge. Agree?", options: ["Yes, we learn more about the universe.", "No, it's a waste of money."], correct: "Yes, we learn more about the universe." },
+            { ai: "Space technology benefits life on Earth. What's your stance?", options: ["Yes, satellites and GPS help us.", "No, space research is too expensive."], correct: "Yes, satellites and GPS help us." },
+            { ai: "Exploring space helps us find alternative resources. Do you support this?", options: ["Yes, space mining can help Earth.", "No, space is not a solution."], correct: "Yes, space mining can help Earth." },
+            { ai: "Space travel may be necessary for humanity’s survival. Agree?", options: ["Yes, Earth has limited resources.", "No, we should fix Earth first."], correct: "Yes, Earth has limited resources." },
+            { ai: "International space collaboration promotes peace. What do you think?", options: ["Yes, space unites countries.", "No, space competition creates conflict."], correct: "Yes, space unites countries." }
+        ],
+        against: [
+            { ai: "Space exploration is too expensive. Do you agree?", options: ["Yes, money should be spent on Earth.", "No, investing in space is worth it."], correct: "Yes, money should be spent on Earth." },
+            { ai: "We should focus on solving problems on Earth first. Do you support this?", options: ["Yes, climate change is more urgent.", "No, space research helps Earth too."], correct: "Yes, climate change is more urgent." },
+            { ai: "Space travel is too risky. What do you think?", options: ["Yes, it's too dangerous for astronauts.", "No, risks lead to progress."], correct: "Yes, it's too dangerous for astronauts." },
+            { ai: "Space missions don’t provide immediate benefits. Do you agree?", options: ["Yes, they take too long to see results.", "No, long-term investment is needed."], correct: "Yes, they take too long to see results." },
+            { ai: "Private companies should fund space exploration instead. Agree?", options: ["Yes, governments shouldn't pay for it.", "No, space should be public, not private."], correct: "Yes, governments shouldn't pay for it." }
+        ]
+    },
+    "animal_testing": {
+        question: "Is animal testing justified?",
+        for: [
+            { ai: "Animal testing is necessary for medical research. Do you agree?", options: ["Yes, it helps develop treatments.", "No, alternative methods exist."], correct: "Yes, it helps develop treatments." },
+            { ai: "Many life-saving drugs were discovered through animal testing. Agree?", options: ["Yes, it has saved lives.", "No, human trials are better."], correct: "Yes, it has saved lives." },
+            { ai: "Animal testing ensures product safety. What's your stance?", options: ["Yes, it protects consumers.", "No, it causes unnecessary suffering."], correct: "Yes, it protects consumers." },
+            { ai: "There are strict laws that minimize animal suffering. Do you agree?", options: ["Yes, regulations protect animals.", "No, laws are not strict enough."], correct: "Yes, regulations protect animals." },
+            { ai: "Alternatives to animal testing are not yet fully reliable. Agree?", options: ["Yes, animal data is still needed.", "No, modern technology is enough."], correct: "Yes, animal data is still needed." }
+        ],
+        against: [
+            { ai: "Animal testing is cruel and inhumane. Do you agree?", options: ["Yes, animals should not suffer.", "No, human safety comes first."], correct: "Yes, animals should not suffer." },
+            { ai: "Many animal tests fail to predict human responses. Agree?", options: ["Yes, animals and humans are different.", "No, animals provide accurate data."], correct: "Yes, animals and humans are different." },
+            { ai: "There are alternative methods like computer models. Do you support this?", options: ["Yes, technology can replace testing.", "No, alternative methods are not perfect."], correct: "Yes, technology can replace testing." },
+            { ai: "Animals have rights and should not be used for experiments. Agree?", options: ["Yes, ethical concerns matter.", "No, human life is more important."], correct: "Yes, ethical concerns matter." },
+            { ai: "Some successful drugs were developed without animal testing. Do you agree?", options: ["Yes, alternative methods work.", "No, animal testing is still necessary."], correct: "Yes, alternative methods work." }
+        ]
+    },
+    "social_media": {
+        question: "Should social media have age restrictions?",
+        for: [
+            { ai: "Social media can be harmful to young children. Agree?", options: ["Yes, it affects mental health.", "No, kids should have freedom."], correct: "Yes, it affects mental health." },
+            { ai: "Age restrictions help protect children from online dangers. Do you support this?", options: ["Yes, kids need online safety.", "No, parents should control access."], correct: "Yes, kids need online safety." },
+            { ai: "Too much social media can cause addiction. What do you think?", options: ["Yes, kids should limit usage.", "No, social media is harmless."], correct: "Yes, kids should limit usage." }
+        ],
+        against: [
+            { ai: "Parents should control social media use, not governments. Agree?", options: ["Yes, it's a parenting issue.", "No, laws are needed."], correct: "Yes, it's a parenting issue." },
+            { ai: "Many kids learn important skills from social media. Agree?", options: ["Yes, it can be educational.", "No, it's mostly a distraction."], correct: "Yes, it can be educational." }
+        ]
+    },
 };
 
 // Start Debate Function (Pick FOR or AGAINST)
