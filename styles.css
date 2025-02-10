@@ -1,7 +1,10 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
 /* General Page Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #fde2e2, #d0bdf4, #bde0fe); /* Pastel gradient */
+    background: linear-gradient(to bottom, #fde2e2, #d0bdf4, #bde0fe, #f8f9fa); /* Pastel gradient */
     color: #333;
     text-align: center;
     margin: 0;
@@ -11,66 +14,77 @@ body {
 /* Header */
 h1 {
     font-size: 3em;
-    font-weight: bold;
-    color: #d63384; /* Dark Pink */
-    text-shadow: 2px 2px 8px rgba(230, 0, 92, 0.3);
+    font-weight: 800;
+    color: #b82b6c; /* Dark Pink-Red */
+    text-shadow: 3px 3px 10px rgba(184, 43, 108, 0.3);
 }
 
 /* Sections */
 .section {
     background: #ffffff; /* White background */
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 20px;
     margin: 20px auto;
     width: 85%;
     max-width: 900px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+/* Bubbly Effect for Sections */
+.section:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Buttons */
 button {
-    background-color: #e6005c; /* Bright Pink */
+    background: linear-gradient(to right, #ff69b4, #800080); /* Pink to Purple */
     color: white;
-    padding: 12px 16px;
+    padding: 12px 18px;
     border: none;
     font-size: 1.2em;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: 0.3s;
     font-weight: bold;
+    box-shadow: 3px 3px 10px rgba(255, 105, 180, 0.3);
 }
 
 button:hover {
-    background-color: #b82b6c;
+    background: linear-gradient(to right, #b82b6c, #4b0082); /* Darker Pink to Purple */
+    transform: scale(1.05);
 }
 
 /* Select Dropdown */
 select {
-    font-size: 1em;
-    padding: 10px;
+    font-size: 1.1em;
+    padding: 12px;
     border: 2px solid #ff6699;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #fffaf0;
     cursor: pointer;
+    font-weight: bold;
 }
 
 /* Expandable Sections */
 .expandable {
     background-color: #ff6699;
     color: white;
-    padding: 12px;
-    border-radius: 10px;
+    padding: 14px;
+    border-radius: 15px;
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    display: block;
+    font-weight: 600;
     width: 85%;
     max-width: 900px;
     margin: 10px auto;
+    text-align: center;
+    transition: 0.3s;
 }
 
 .expandable:hover {
     background-color: #cc0052;
+    transform: scale(1.02);
 }
 
 /* Expandable Content */
@@ -78,36 +92,63 @@ select {
     display: none;
     background: #fff0f5; /* Light pink */
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: left;
     width: 85%;
     max-width: 900px;
     margin: 10px auto;
+    box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.2);
 }
 
 /* XP System */
 .xp-box {
-    background-color: #ffeeba;
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: bold;
+    background: linear-gradient(to right, #ffd700, #ff8c00); /* Gold to Orange */
+    padding: 12px;
+    border-radius: 15px;
+    font-weight: 800;
     font-size: 1.5em;
     width: 85%;
     max-width: 600px;
     margin: 20px auto;
+    box-shadow: 3px 3px 15px rgba(255, 140, 0, 0.4);
 }
 
 /* Debate Output Styling */
 #debateOutput {
     background: #f8f9fa; /* Light Gray */
     padding: 20px;
-    border-radius: 10px;
-    font-size: 1.2em;
+    border-radius: 15px;
+    font-size: 1.3em;
     font-weight: bold;
     text-align: left;
     width: 85%;
     max-width: 900px;
     margin: 20px auto;
+    border-left: 5px solid #800080; /* Purple Side Border */
+}
+
+/* Speech Bubbles for Debate */
+.speech-bubble {
+    background: #e6ccff; /* Light Purple */
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    text-align: left;
+    max-width: 800px;
+    margin: 15px auto;
+    box-shadow: 3px 3px 15px rgba(138, 43, 226, 0.3);
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #e6ccff;
 }
 
 /* Lists */
@@ -120,12 +161,30 @@ ul {
 li {
     padding: 8px;
     font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    background: #ffe6e6; /* Light Red */
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
 }
 
-/* Responsive Design */
+/* Leaderboard */
+.leaderboard {
+    background: linear-gradient(to right, #32cd32, #008000); /* Light Green to Dark Green */
+    padding: 15px;
+    border-radius: 15px;
+    width: 85%;
+    max-width: 600px;
+    margin: 20px auto;
+    font-weight: bold;
+    box-shadow: 3px 3px 10px rgba(0, 128, 0, 0.3);
+}
+
+/* Mobile Responsive Design */
 @media screen and (max-width: 600px) {
     h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
     
     button {
@@ -133,7 +192,7 @@ li {
         padding: 10px 14px;
     }
     
-    .section, .expandable, .hidden-content, .xp-box {
+    .section, .expandable, .hidden-content, .xp-box, .leaderboard {
         width: 95%;
     }
 }
