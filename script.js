@@ -387,11 +387,18 @@ const liveDebateTopics = {
 
 // Start Debate Function (Pick FOR or AGAINST)
 function startDebate(topic) {
-    let stance = confirm(`Debate Topic: ${liveDebateTopics[topic].question}\n\nDo you want to argue FOR this topic? (Press 'OK' for FOR, 'Cancel' for AGAINST)`);
+    let debateArea = document.getElementById("debateSimulation");
+    debateArea.innerHTML = `<p>Debate Topic: <strong>${liveDebateTopics[topic].question}</strong></p>
+                            <div class="for-against-container">
+                                <button class="for-btn" onclick="startDebateSession('${topic}', 'for')">FOR</button>
+                                <button class="against-btn" onclick="startDebateSession('${topic}', 'against')">AGAINST</button>
+                            </div>`;
+}
 
+function startDebateSession(topic, stance) {
     let debateArea = document.getElementById("debateSimulation");
     debateArea.innerHTML = ""; // Clear previous content
-    let debateRounds = stance ? liveDebateTopics[topic].for : liveDebateTopics[topic].against;
+    let debateRounds = stance === "for" ? liveDebateTopics[topic].for : liveDebateTopics[topic].against;
 
     let index = 0;
 
