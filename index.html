@@ -34,18 +34,20 @@
     </div>
 
     <!-- Live Debate Simulator -->
-    <div class="section">
-        <h2>🤖 Live Debate Simulator</h2>
-        <p>Choose a topic and argue against the AI!</p>
-        <select id="liveDebateTopic">
-            <option value="school_uniforms">School Uniforms</option>
-            <option value="ai_jobs">AI Taking Over Jobs</option>
-            <option value="free_education">Free University Education</option>
-            <option value="climate_change">Climate Change</option>
-        </select>
-        <button onclick="startDebate(document.getElementById('liveDebateTopic').value)">Start Debate</button>
-        <div id="debateSimulation" class="section"></div>
+    <div class="debate-container">
+    <h2>💬 Live Debate Simulator</h2>
+    <p>Choose a topic to debate with AI:</p>
+    <div class="bubble-container">
+        <button class="debateTopicBubble" onclick="startDebate('school_uniforms')">🎓 School Uniforms</button>
+        <button class="debateTopicBubble" onclick="startDebate('ai_jobs')">🤖 AI Jobs</button>
+        <button class="debateTopicBubble" onclick="startDebate('climate_change')">🌍 Climate Change</button>
+        <button class="debateTopicBubble" onclick="startDebate('gun_control')">🔫 Gun Control</button>
+        <button class="debateTopicBubble" onclick="startDebate('space_exploration')">🚀 Space Exploration</button>
+        <button class="debateTopicBubble" onclick="startDebate('animal_testing')">🐾 Animal Testing</button>
+        <button class="debateTopicBubble" onclick="startDebate('social_media')">📱 Social Media</button>
     </div>
+    <div id="debateSimulation"></div>
+</div>
 
     <!-- Random Debate Challenge -->
     <div class="section">
