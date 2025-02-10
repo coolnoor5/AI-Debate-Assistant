@@ -495,14 +495,39 @@ document.querySelectorAll(".debateOption").forEach(button => {
 // Random Debate Topic Generator
 function generateChallenge() {
     let topics = [
-        "Should school uniforms be mandatory?",
-        "Is AI taking over human jobs?",
-        "Should social media have age restrictions?",
-        "Should stricter gun control laws be implemented?",
-        "Is climate change the biggest global threat?",
-        "Should university education be free for all?",
-        "Should governments fund space exploration?",
-        "Is animal testing justified?"
+    "Should school uniforms be mandatory?",
+    "Is AI taking over human jobs?",
+    "Should social media have age restrictions?",
+    "Should stricter gun control laws be implemented?",
+    "Is climate change the biggest global threat?",
+    "Should university education be free for all?",
+    "Should governments fund space exploration?",
+    "Is animal testing justified?",
+    "Should students have a four-day school week?",
+    "Is homeschooling better than traditional schooling?",
+    "Should video games be considered a sport?",
+    "Is homework beneficial for students?",
+    "Should junk food be banned in schools?",
+    "Should zoos be banned?",
+    "Is it ethical to use animals for entertainment (circuses, rodeos, etc.)?",
+    "Should social media companies be responsible for misinformation?",
+    "Is cryptocurrency the future of money?",
+    "Should self-driving cars be allowed on public roads?",
+    "Should voting be mandatory?",
+    "Is TikTok more harmful than beneficial for youth?",
+    "Should there be a universal basic income?",
+    "Are reality TV shows harmful to society?",
+    "Should celebrities have a right to privacy?",
+    "Should school start times be later?",
+    "Should plastic bags be banned worldwide?",
+    "Are electric cars better than gasoline cars?",
+    "Should school cafeterias serve only healthy food?",
+    "Should books with controversial themes be banned in schools?",
+    "Should school tests be eliminated in favor of project-based learning?",
+    "Should children be allowed to have smartphones?",
+    "Is fast food responsible for obesity?",
+    "Should influencers be held accountable for promoting unhealthy products?",
+    "Should schools replace textbooks with tablets?"
     ];
 
     // Select a random topic
