@@ -18,7 +18,7 @@ function toggleSection(sectionId) {
 }
 
 // Full Debate Data (Automatically Generated Pros, Cons, Arguments, Counterargument
-    const debates = {
+const debates = {
     "school_uniforms": {
         pros: [
             "Reduces peer pressure and social comparison.",
@@ -161,7 +161,8 @@ function toggleSection(sectionId) {
             "Higher education should be based on merit, not accessibility.",
             "Private funding can improve education quality.",
             "Free education may not be sustainable in the long run.",
-        ],
+        ]
+        },
         "gun_control": {
         pros: [
             "Stronger gun laws reduce crime rates.",
@@ -312,7 +313,7 @@ document.getElementById("generateDebate").addEventListener("click", function () 
     let topic = document.getElementById("debateTopic").value;
     let output = document.getElementById("debateOutput");
 
-    if (debates[topic]) {
+    if (debates[topic]) { // ✅ This now correctly checks if the topic exists in debates object
         let debate = debates[topic];
         output.innerHTML = `
             <h3>📢 Debate on ${topic.replace("_", " ")}</h3>
@@ -321,25 +322,11 @@ document.getElementById("generateDebate").addEventListener("click", function () 
             <strong>📢 Arguments:</strong> <ul>${debate.arguments.map(arg => `<li>${arg}</li>`).join("")}</ul>
             <strong>🔄 Counter-Arguments:</strong> <ul>${debate.counterArguments.map(counter => `<li>${counter}</li>`).join("")}</ul>
         `;
-        addXP();
+        addXP(); // ✅ Ensures XP is added when a debate is generated
     } else {
         output.innerHTML = "❌ No debate found. Try another topic.";
     }
 });
-
-// AI Live Debate Simulator (15 Questions Per Topic)
-const liveDebateTopics = {
-    "school_uniforms": {
-        for: [
-            { ai: "School uniforms promote equality among students. What do you think?", options: ["Yes, they prevent class-based discrimination.", "No, they limit individual expression."], correct: "Yes, they prevent class-based discrimination." },
-            { ai: "Uniforms encourage discipline. Do you agree?", options: ["Yes, they create structure and focus.", "No, discipline comes from teaching."], correct: "Yes, they create structure and focus." }
-        ],
-        against: [
-            { ai: "School uniforms limit individuality. What do you think?", options: ["Yes, self-expression is important.", "No, students can express themselves in other ways."], correct: "Yes, self-expression is important." },
-            { ai: "Uniforms can be expensive. Do you agree?", options: ["Yes, they are an extra financial burden.", "No, they are cheaper than buying many clothes."], correct: "Yes, they are an extra financial burden." }
-        ]
-    }
-};
 
 // Start Debate Function (Pick FOR or AGAINST)
 const liveDebateTopics = {
@@ -426,3 +413,19 @@ function startDebateSession(topic, stance) {
 
     continueDebate();
 }
+// Attach Click-to-Expand to All Sections
+document.querySelectorAll(".expandable").forEach(button => {
+    button.addEventListener("click", function () {
+        let targetId = this.getAttribute("data-target");
+        let section = document.getElementById(targetId);
+        section.style.display = (section.style.display === "none" || section.style.display === "") ? "block" : "none";
+    });
+});
+
+// Ensure Live Debate Starts
+document.querySelectorAll(".debateOption").forEach(button => {
+    button.addEventListener("click", function () {
+        let topic = this.getAttribute("data-topic");
+        startDebate(topic);
+    });
+});
