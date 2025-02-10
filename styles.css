@@ -66,32 +66,35 @@ select {
     cursor: pointer;
     font-weight: bold;
 }
-
 /* Click-to-Expand Style */
 .expandable {
-    background-color: #f5f5f5;
+    background: linear-gradient(135deg, #ff6699, #cc66ff, #6699ff); /* Pink, Purple, Blue */
+    color: white;
     padding: 12px;
     margin: 10px 0;
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
     text-align: center;
-    border: 2px solid #ccc;
+    border: none;
     transition: 0.3s;
 }
 
 .expandable:hover {
-    background-color: #e0e0e0;
+    background: linear-gradient(135deg, #ff3366, #9933ff, #3366ff); /* Darker shades on hover */
 }
 
+/* Hidden Content Background */
 .hidden-content {
     display: none;
-    background-color: white;
+    background: white;
     padding: 15px;
     margin: 10px 0;
     border-radius: 8px;
     border: 1px solid #ddd;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 /* XP System */
 .xp-box {
