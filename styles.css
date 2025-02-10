@@ -181,6 +181,38 @@ li {
     box-shadow: 3px 3px 10px rgba(0, 128, 0, 0.3);
 }
 
+/* Live Debate Simulator Styling */
+#debateSimulation {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    text-align: left;
+    width: 85%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-left: 5px solid #b82b6c; /* Dark Pink Side Border */
+}
+
+.debateOption {
+    background: linear-gradient(to right, #800080, #ff69b4); /* Purple to Pink */
+    color: white;
+    padding: 12px;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s;
+    font-weight: bold;
+    box-shadow: 3px 3px 10px rgba(255, 105, 180, 0.3);
+    margin: 10px;
+}
+
+.debateOption:hover {
+    background: linear-gradient(to right, #b82b6c, #4b0082); /* Darker Pink to Purple */
+    transform: scale(1.05);
+}
+
 /* Mobile Responsive Design */
 @media screen and (max-width: 600px) {
     h1 {
