@@ -17,7 +17,7 @@ function toggleSection(sectionId) {
     section.style.display = section.style.display === "none" ? "block" : "none";
 }
 
-// Full Debate Data (Automatically Generated Pros, Cons, Arguments, Counterargumentconst debates = {
+// Full Debate Data (Automatically Generated Pros, Cons, Arguments, Counterargument
     const debates = {
     "school_uniforms": {
         pros: [
