@@ -697,3 +697,27 @@ const logicPuzzles = [
         explanation: "A **Slippery Slope** assumes one small action will lead to extreme consequences."
     }
 ];
+// Function to Start a Logic Puzzle
+function startLogicPuzzle() {
+    let randomIndex = Math.floor(Math.random() * logicPuzzles.length);
+    let puzzle = logicPuzzles[randomIndex];
+    
+    let puzzleOutput = document.getElementById("puzzleOutput");
+    puzzleOutput.innerHTML = `
+        <h4>🧠 ${puzzle.question}</h4>
+        <button class="puzzleOption" onclick="checkPuzzleAnswer('${puzzle.options[0]}', '${puzzle.correct}', '${puzzle.explanation}')">${puzzle.options[0]}</button>
+        <button class="puzzleOption" onclick="checkPuzzleAnswer('${puzzle.options[1]}', '${puzzle.correct}', '${puzzle.explanation}')">${puzzle.options[1]}</button>
+        <button class="puzzleOption" onclick="checkPuzzleAnswer('${puzzle.options[2]}', '${puzzle.correct}', '${puzzle.explanation}')">${puzzle.options[2]}</button>
+    `;
+}
+
+// Function to Check Answer
+function checkPuzzleAnswer(userAnswer, correctAnswer, explanation) {
+    let puzzleOutput = document.getElementById("puzzleOutput");
+    if (userAnswer === correctAnswer) {
+        puzzleOutput.innerHTML += `<p>✅ Correct! ${explanation}</p>`;
+        addXP(); // Reward XP for correct answer
+    } else {
+        puzzleOutput.innerHTML += `<p>❌ Incorrect. Try again!</p>`;
+    }
+}
