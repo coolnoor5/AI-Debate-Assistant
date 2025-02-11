@@ -594,3 +594,106 @@ function checkFallacyAnswer(selected, correct) {
         result.innerText = "❌ Incorrect. Think again!";
     }
 }
+// Logical Reasoning Puzzles (Expanded)
+const logicPuzzles = [
+    {
+        question: "Which of the following is an example of a STRONG argument?",
+        options: [
+            "Climate change is real because I feel hotter than last year.",
+            "Scientific studies show a consistent increase in global temperatures.",
+            "If we stop using plastic, the economy will collapse."
+        ],
+        correct: "Scientific studies show a consistent increase in global temperatures.",
+        explanation: "A strong argument is based on **evidence and logic**, not personal experiences or extreme assumptions."
+    },
+    {
+        question: "What is the flaw in this argument? 'If we ban violent video games, crime rates will drop to zero.'",
+        options: [
+            "It assumes a direct cause without proof.",
+            "It presents a valid statistical correlation.",
+            "It is an opinion, so it's automatically true."
+        ],
+        correct: "It assumes a direct cause without proof.",
+        explanation: "This is a **causation vs correlation fallacy**. Just because two things happen together does not mean one causes the other."
+    },
+    {
+        question: "Which response correctly identifies a logical fallacy?",
+        options: [
+            "'We should not ban homework because my cousin loves doing it!'",
+            "'Some studies show homework improves learning, while others disagree.'",
+            "'Students who study regularly perform better than those who don't.'"
+        ],
+        correct: "'We should not ban homework because my cousin loves doing it!'",
+        explanation: "This is an **Anecdotal Fallacy** – using one person’s experience to prove a general rule."
+    },
+    {
+        question: "Which is an example of a 'Straw Man' fallacy?",
+        options: [
+            "'I think we should reduce car emissions.' 'So you want to ban all cars?!'",
+            "'Renewable energy is important for a sustainable future.'",
+            "'If we invest in green energy, we can reduce pollution.'"
+        ],
+        correct: "'I think we should reduce car emissions.' 'So you want to ban all cars?!'",
+        explanation: "A **Straw Man fallacy** misrepresents someone’s argument to make it easier to attack."
+    },
+    {
+        question: "Which of these is an example of a Red Herring fallacy?",
+        options: [
+            "'We should improve schools.' 'But what about crime rates?'",
+            "'Lower taxes help businesses grow.'",
+            "'A strong economy reduces poverty.'"
+        ],
+        correct: "'We should improve schools.' 'But what about crime rates?'",
+        explanation: "A **Red Herring** is when someone distracts from the real issue with an unrelated topic."
+    },
+    {
+        question: "Which argument contains a False Dilemma fallacy?",
+        options: [
+            "'We either ban junk food or we let obesity destroy our children!'",
+            "'A balanced diet is important for health.'",
+            "'Excess sugar can lead to health problems.'"
+        ],
+        correct: "'We either ban junk food or we let obesity destroy our children!'",
+        explanation: "A **False Dilemma** presents only two choices when more options exist."
+    },
+    {
+        question: "Which of these is an Ad Hominem fallacy?",
+        options: [
+            "'We shouldn't listen to him; he's just a high school dropout.'",
+            "'Experts agree that exercise is important for health.'",
+            "'Lowering taxes helps the economy.'"
+        ],
+        correct: "'We shouldn't listen to him; he's just a high school dropout.'",
+        explanation: "**Ad Hominem** attacks a person instead of addressing their argument."
+    },
+    {
+        question: "Which statement uses Circular Reasoning?",
+        options: [
+            "'This law is good because it is beneficial to society.'",
+            "'Studies show that exercise improves mental health.'",
+            "'Many experts recommend reading books for better learning.'"
+        ],
+        correct: "'This law is good because it is beneficial to society.'",
+        explanation: "**Circular Reasoning** restates the conclusion instead of proving it."
+    },
+    {
+        question: "Which of these is a Hasty Generalization?",
+        options: [
+            "'I met two rude doctors, so all doctors must be rude.'",
+            "'Some athletes train every day to improve their skills.'",
+            "'Rainfall increases in the winter due to weather patterns.'"
+        ],
+        correct: "'I met two rude doctors, so all doctors must be rude.'",
+        explanation: "**Hasty Generalization** applies a small sample to an entire group."
+    },
+    {
+        question: "Which example shows a Slippery Slope fallacy?",
+        options: [
+            "'If we allow students to wear casual clothes, next they'll stop coming to school at all!'",
+            "'Different dress codes exist in various schools.'",
+            "'Some schools allow casual clothing on Fridays.'"
+        ],
+        correct: "'If we allow students to wear casual clothes, next they'll stop coming to school at all!'",
+        explanation: "A **Slippery Slope** assumes one small action will lead to extreme consequences."
+    }
+];
