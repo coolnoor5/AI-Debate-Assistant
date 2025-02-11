@@ -535,3 +535,62 @@ function generateChallenge() {
     // Display the random topic in the output area
     document.getElementById("challengeOutput").innerText = `🗣️ Debate Topic: ${randomTopic}`;
 }
+// Logical Fallacies Quiz
+const fallacyQuestions = [
+    {
+        question: "🚀 'If we allow students to use calculators, soon they'll forget how to do math entirely!'",
+        options: ["Slippery Slope", "False Dilemma"],
+        correct: "Slippery Slope"
+    },
+    {
+        question: "👨‍⚖️ 'My opponent is a terrible person, so their argument must be wrong!'",
+        options: ["Ad Hominem", "Straw Man"],
+        correct: "Ad Hominem"
+    },
+    {
+        question: "🎭 'Either you support my plan, or you want the country to fail.'",
+        options: ["False Dilemma", "Appeal to Emotion"],
+        correct: "False Dilemma"
+    },
+    {
+        question: "😢 'If you don’t agree with me, you don’t care about people’s feelings!'",
+        options: ["Appeal to Emotion", "Straw Man"],
+        correct: "Appeal to Emotion"
+    },
+    {
+        question: "📢 'You should buy this phone because celebrities use it too!'",
+        options: ["Bandwagon Fallacy", "Slippery Slope"],
+        correct: "Bandwagon Fallacy"
+    },
+    {
+        question: "📚 'The teacher said it's true, so it must be correct!'",
+        options: ["Appeal to Authority", "Straw Man"],
+        correct: "Appeal to Authority"
+    }
+];
+
+function startFallacyQuiz() {
+    let randomIndex = Math.floor(Math.random() * fallacyQuestions.length);
+    let questionObj = fallacyQuestions[randomIndex];
+
+    document.getElementById("fallacyQuestion").innerText = questionObj.question;
+    document.getElementById("fallacyOption1").innerText = questionObj.options[0];
+    document.getElementById("fallacyOption2").innerText = questionObj.options[1];
+
+    document.getElementById("fallacyOption1").onclick = function () {
+        checkFallacyAnswer(questionObj.options[0], questionObj.correct);
+    };
+    document.getElementById("fallacyOption2").onclick = function () {
+        checkFallacyAnswer(questionObj.options[1], questionObj.correct);
+    };
+}
+
+function checkFallacyAnswer(selected, correct) {
+    let result = document.getElementById("fallacyResult");
+    if (selected === correct) {
+        result.innerText = "✅ Correct! You spotted the fallacy!";
+        addXP();
+    } else {
+        result.innerText = "❌ Incorrect. Think again!";
+    }
+}
