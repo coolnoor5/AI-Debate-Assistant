@@ -372,4 +372,61 @@ li {
     background-color: #ff473a;
     transform: scale(1.05);
 }
+    /* 🔹 Logical Puzzles Section Styling */
+#logicPuzzles {
+    background: #f9e0e0; /* Soft pastel pink */
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#logicPuzzles h3 {
+    color: #d64045; /* Dark coral pink */
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#puzzleOutput {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f4f1de; /* Soft beige */
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Puzzle Buttons */
+.puzzleOption {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.puzzleOption:hover {
+    background: linear-gradient(135deg, #fa709a, #fee140);
+    transform: scale(1.05);
+}
+
+/* 🔹 Click-to-Expand Sections */
+.expandable {
+    text-align: center;
+    background: coral;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
 
