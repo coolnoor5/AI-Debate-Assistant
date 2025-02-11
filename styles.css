@@ -68,34 +68,37 @@ select {
   }  
 /* Click-to-Expand Style */
 .expandable {
-    background: linear-gradient(135deg, #ff99cc, #cc99ff, #99ccff); /* Soft Pastel Pink, Purple, Blue */
+    background: linear-gradient(135deg, #ff7f50, #ff6f40, #ff5f30); /* Coral Pink Gradient */
     color: white;
-    padding: 15px;
-    margin: 10px 0;
+    padding: 20px;
+    margin: 15px auto; /* Centering */
     font-weight: bold;
     cursor: pointer;
-    border-radius: 30px; /* Fully rounded bubble effect */
+    border-radius: 35px; /* Bigger Rounded Corners */
     text-align: center;
     border: none;
     transition: 0.3s;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15); /* Soft floating effect */
+    width: 80%; /* Increase width */
+    font-size: 18px; /* Bigger text */
 }
 
-/* Hover Effect - Darker Gradient */
+/* Hover Effect */
 .expandable:hover {
-    background: linear-gradient(135deg, #ff6699, #9966ff, #6699ff); /* Slightly darker shades */
-    transform: scale(1.05); /* Slight zoom effect */
+    background: linear-gradient(135deg, #ff6f40, #ff5f30, #ff4f20);
+    transform: scale(1.05);
 }
 
-/* Hidden Content (Inside Bubbles) */
+/* Hidden Content - Centered */
 .hidden-content {
     display: none;
     background: white;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 25px; /* Rounded inner content */
-    border: 2px solid #ff99cc; /* Soft border matching bubble color */
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin: 15px auto;
+    border-radius: 30px;
+    border: 2px solid #ff7f50;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+    width: 75%; /* Increase size */
 }
 
 /* Bubble Animation */
