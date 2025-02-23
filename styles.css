@@ -429,4 +429,13 @@ li {
     color: white;
     cursor: pointer;
     transition: 0.3s;
+    }
+    
+    #sustainabilityDebate {
+    background-color: #f0f8ea; /* Light green background */
+    border: 2px solid #4caf50; /* Green border */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
 
